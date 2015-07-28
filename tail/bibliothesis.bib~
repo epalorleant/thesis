@@ -1,0 +1,1159 @@
+%%%%%%%%%%%%%%%%%%%%% BibTex for Abstraction%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{vdmstudy,
+  title={A study on video data mining},
+  author={Vijayakumar, V and Nedunchezhian, R},
+  journal={International journal of multimedia information retrieval},
+  volume={1},
+  number={3},
+  pages={153--172},
+  year={2012},
+  publisher={Springer}
+}
+
+@article{episode97,
+  author    = {Heikki Mannila and
+               Hannu Toivonen and
+               A. Inkeri Verkamo},
+  title     = {Discovery of Frequent Episodes in Event Sequences},
+  journal   = {Data Min. Knowl. Discov.},
+  volume    = {1},
+  number    = {3},
+  year      = {1997},
+  pages     = {259-289},
+  ee        = {http://dx.doi.org/10.1023/A:1009748302351},
+}
+
+@article{Stein2003,
+author = {Stein, B De Oliveira},
+file = {:media/Training/Soc-TraceI/Lot3/Paj\`{e}TraceFileFormat.pdf:pdf},
+keywords = {mpi,parallel programming,performance debugging,pthread,self defined,visualization},
+title = {{Paj\'{e} trace file format}},
+year = {2003}
+}
+@inproceedings{Hoffman2009,
+author = {Hoffman, Kevin J. and Eugster, Patrick and Jagannathan, Suresh},
+booktitle = {ACM SIGPLAN Notices},
+doi = {10.1145/1543135.1542527},
+file = {:home/ck/Dropbox/Mining team/PLDI09\_Semantics-Aware Trace Analysis/PLDI09\_Semantics-Aware Trace Analysis.pdf:pdf},
+isbn = {9781605583921},
+issn = {03621340},
+month = may,
+number = {6},
+pages = {453},
+title = {{Semantics-aware trace analysis}},
+volume = {44},
+year = {2009}
+}
+url = {http://portal.acm.org/citation.cfm?doid=1543135.1542527},
+
+
+@article{Weg,
+author = {Weg, Zellescher and Henschel, Robert},
+file = {:media/Training/Soc-TraceI/Lot3/Ptp\_workshop\_20070523\_vampir.pdf:pdf},
+journal = {Memory},
+title = {{Introducing OTF / Vampir / VampirTrace}}
+}
+
+@article{vite,
+title = {Visual Trace Explorer},
+url = {http://vite.gforge.inria.fr/},
+
+}
+@article{Wang2008,
+author = {Wang, Haixun and Pei, Jian},
+file = {:media/Training/Soc-TraceI/Articles/clustering/similarity-clustering-JCST08.pdf:pdf},
+journal = {Small},
+keywords = {clustering,data mining,pattern similarity},
+number = {July},
+pages = {481--496},
+title = {{Clustering by Pattern Similarity}},
+volume = {23},
+year = {2008}
+}
+@article{Dalal2011,
+author = {Dalal, M A and Harale, N D},
+file = {:media/Training/Soc-TraceI/Articles/clustering/ASurveyOnClusteringInDataMining.pdf:pdf},
+isbn = {9781450304498},
+journal = {Engineering and Technology},
+keywords = {algorithms,design},
+number = {Icwet},
+pages = {2--5},
+title = {{A Survey on Clustering In Data Mining}},
+year = {2011}
+}
+@article{Jain2010,
+author = {Jain, Anil K.},
+doi = {10.1016/j.patrec.2009.09.011},
+file = {:media/Training/Soc-TraceI/Articles/clustering/JainDataClustering\_PRL09.pdf:pdf},
+issn = {01678655},
+journal = {Pattern Recognition Letters},
+month = jun,
+number = {8},
+pages = {651--666},
+publisher = {Elsevier B.V.},
+title = {{Data clustering: 50 years beyond K-means}},
+volume = {31},
+year = {2010}
+}
+
+@inproceedings{pei2001,
+  title={Prefixspan: Mining sequential patterns efficiently by prefix-projected pattern growth},
+  author={Pei, Jian and Pinto, Helen and Chen, Qiming and Han, Jiawei and Mortazavi-Asl, Behzad and Dayal, Umeshwar and Hsu, Mei-Chun},
+  booktitle={2013 IEEE 29th International Conference on Data Engineering (ICDE)},
+  pages={0215--0215},
+  year={2001},
+  organization={IEEE Computer Society}
+}
+
+@book{gsp1996,
+  title={Mining sequential patterns: Generalizations and performance improvements},
+  author={Srikant, Ramakrishnan and Agrawal, Rakesh},
+  year={1996},
+  publisher={Springer}
+}
+
+@article{Zou2010,
+author = {Zou, Jia and Xiao, Jing and Hou, Rui and Wang, Yanqi},
+doi = {10.1109/ICDM.2010.123},
+file = {:home/ck/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Zou et al. - 2010 - Frequent Instruction Sequential Pattern Mining in Hardware Sample Data.pdf:pdf},
+isbn = {978-1-4244-9131-5},
+journal = {2010 IEEE International Conference on Data Mining},
+keywords = {-sequential patter mining,hardware sample data,performance analysis},
+month = dec,
+pages = {1205--1210},
+publisher = {IEEE},
+title = {{Frequent Instruction Sequential Pattern Mining in Hardware Sample Data}},
+year = {2010}
+}
+
+@article{Zhao2003,
+
+author = {Zhao, Qiankun and Bhowmick, Sourav S},
+file = {::},
+journal = {Database},
+number = {2003118},
+title = {{Sequential Pattern Mining: A Survey}},
+year = {2003}
+}
+@techreport{levelshtein-66-binary,
+    author = {Levenshtein, Vladimir I.},
+    citeulike-article-id = {311174},
+    journal = {Soviet Physics Doklady},
+    keywords = {thesis},
+    number = {8},
+    pages = {707--710},
+    posted-at = {2005-09-03 11:43:42},
+    priority = {2},
+    title = {{Binary codes capable of correcting deletions, insertions, and reversals}},
+    volume = {10},
+    year = {1966}
+}
+
+@inproceedings{Chan,
+ author = {Chan, Andrew and Holmes, Reid and Murphy, Gail C. and Ying, Annie T. T.},
+ title = {Scaling an Object-Oriented System Execution Visualizer through Sampling},
+ booktitle = {Proceedings of the 11th IEEE International Workshop on Program Comprehension},
+ series = {IWPC '03},
+ year = {2003},
+ isbn = {0-7695-1883-4},
+ pages = {237-244},
+ acmid = {857018},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+} 
+@inproceedings{heidar3,
+author = {Pirzadeh, Heidar and Hamou-lhadj, Abdelwahab},
+file = {:home/ck/Dropbox/Mining team/ICPC\_ICSE\_ICECCS11\_Overview/DM\_TR\_ICSE\_A Software Behaviour Analysis Framework Based on the Human Perception Systems.pdf:pdf},
+isbn = {9781450304450},
+keywords = {dynamic analysis,human perception,phase detection,program comprehension,psychological processes,trace analysis},
+pages = {948--951},
+title = {{A Software Behaviour Analysis Framework Based on the Human Perception Systems (NIER Track)}}
+}
+@inproceedings{heidar2,
+author = {Pirzadeh, Heidar and Shanian, Sara and Hamou-Lhadj, Abdelwahab and Mehrabian, Ali},
+booktitle = {2011 IEEE 19th International Conference on Program Comprehension},
+doi = {10.1109/ICPC.2011.17},
+file = {:home/ck/Dropbox/Mining team/ICPC\_ICSE\_ICECCS11\_Overview/DM\_TR\_2011\_ICPC\_The Concept of Stratified Sampling of Execution Traces.pdf:pdf},
+isbn = {978-1-61284-308-7},
+pages = {225--226},
+publisher = {IEEE},
+title = {{The Concept of Stratified Sampling of Execution Traces}},
+year = {2011}
+}
+@inproceedings{heidar1,
+author = {Pirzadeh, Heidar and Hamou-Lhadj, Abdelwahab},
+booktitle = {2011 16th IEEE International Conference on Engineering of Complex Computer Systems},
+doi = {10.1109/ICECCS.2011.29},
+file = {:home/ck/Dropbox/Mining team/ICPC\_ICSE\_ICECCS11\_Overview/ICECCS11\_NovelApproachBasedOnGestaldtPsychologyForAbstractingTheContentOfLargeExecutionTracesForProgramComprehension.pdf:pdf},
+isbn = {978-1-61284-853-2},
+keywords = {maintenance,program comprehension,software,software engineering,trace analysis},
+pages = {221--230},
+publisher = {IEEE},
+title = {{A Novel Approach Based on Gestalt Psychology for Abstracting the Content of Large Execution Traces for Program Comprehension}},
+year = {2011}
+}
+@phdthesis{Grenoble2010,
+author = {Xavier guérin},
+file = {:home/ck/Dropbox/Mining team/ICPC\_ICSE\_ICECCS11\_Overview/Approche Efficace de D\'{e}veloppement de Logiciel Embarqu\'{e} pour.pdf:pdf},
+isbn = {9782848131542},
+title = {{Approche Efficace de D\'{e}veloppement de Logiciel Embarqu\'{e} pour des Syst\`{e}mes Multiprocesseurs sur Puce}},
+year = {2010}
+}
+@inproceedings{Dugerdil,
+address = {New York, New York, USA},
+author = {Dugerdil, Philippe},
+booktitle = {Proceedings of the 2007 conference of the center for advanced studies on Collaborative research - CASCON '07},
+file = {:media/thesis/Soc-TraceI/Articles/IEEE/biblio/p306-dugerdil.pdf:pdf},
+issn = {17057361},
+pages = {306},
+publisher = {ACM Press},
+title = {{Using trace sampling techniques to identify dynamic clusters of classes}},
+year = {2007}
+}
+@article{Kim,
+author = {Kim, Hyungsul and Im, Sungjin and Abdelzaher, Tarek and Han, Jiawei and Sheridan, David and Vasudevan, Shobha},
+doi = {10.1109/ICDM.2011.131},
+file = {:media/thesis/Soc-TraceI/Articles/IEEE/biblio/ICDM11\_SignaturePatternCoveringViaLocalGreedyAlgorithmAndPatternShrink:},
+isbn = {978-1-4577-2075-8},
+journal = {2011 IEEE 11th International Conference on Data Mining},
+month = dec,
+pages = {330--339},
+publisher = {IEEE},
+title = {{Signature Pattern Covering via Local Greedy Algorithm and Pattern Shrink}},
+year = {2011}
+}
+@article{Cornelissen2007,
+author = {Cornelissen, Bas and Holten, Danny and Zaidman, Andy and Moonen, Leon and van Wijk, Jarke J. and van Deursen, Arie},
+doi = {10.1109/ICPC.2007.39},
+file = {:home/ck/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Cornelissen et al. - 2007 - Understanding Execution Traces Using Massive Sequence and Circular Bundle Views.pdf:pdf},
+isbn = {0-7695-2860-0},
+journal = {15th IEEE International Conference on Program Comprehension (ICPC '07)},
+pages = {49--58},
+publisher = {IEEE},
+title = {{Understanding Execution Traces Using Massive Sequence and Circular Bundle Views}},
+year = {2007}
+}
+@inproceedings{Hamou,
+author = {Hamou-Lhadj, Abdelwahab and Lethbridge, Timothy C.},
+ title = {A survey of trace exploration tools and techniques},
+ booktitle = {Proceedings of the 2004 conference of the Centre for Advanced Studies on Collaborative research},
+ series = {CASCON '04},
+ year = {2004},
+ location = {Markham, Ontario, Canada},
+ pages = {42--55},
+ numpages = {14},
+ acmid = {1034918},
+ publisher = {IBM Press},
+}
+
+@inproceedings{Alawneh2011,
+author = {Alawneh, Luay and Hamou-Lhadj, Abdelwahab},
+booktitle = {2011 15th European Conference on Software Maintenance and Reengineering},
+doi = {10.1109/CSMR.2011.27},
+file = {:media/thesis/Soc-TraceI/Articles/IEEE/biblio/CSMR11\_PatternRecognitionTechniquesAppliedToTheAbstractionOf.pdf:pdf},
+isbn = {978-1-61284-259-2},
+keywords = {trace of inter-process,communication,dynamic analysis,message passing interface,of large traces since,pattern,program comprehension,recognition},
+month = {mar},
+pages = {211--220},
+publisher = {IEEE},
+title = {{Pattern Recognition Techniques Applied to the Abstraction of Traces of Inter-Process Communication}},
+year = {2011}
+}
+url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=5741263},
+
+@article{Cheng2008,
+author = {Cheng, Hong and Yan, Xifeng and Han, Jiawei and Yu, Philip S.},
+doi = {10.1109/ICDE.2008.4497425},
+file = {:media/thesis/Soc-TraceI/Articles/IEEE/biblio/icde08\_directDiscriminativePaternsForEffectiveClassification.pdf:pdf},
+isbn = {978-1-4244-1836-7},
+journal = {2008 IEEE 24th International Conference on Data Engineering},
+month = {apr},
+pages = {169--178},
+publisher = {IEEE},
+title = {{Direct Discriminative Pattern Mining for Effective Classification}},
+year = {2008}
+}
+@article{Sen1993,
+address = {New York, New York, USA},
+author = {Sen, Sandip},
+doi = {10.1145/162754.162852},
+file = {:media/thesis/Soc-TraceI/Articles/IEEE/biblio/ACM1993\_MinimalCostSetCovering.pdf:pdf},
+isbn = {0897915674},
+journal = {Proceedings of the 1993 ACM/SIGAPP symposium on Applied computing states of the art and practice - SAC '93},
+pages = {157--164},
+publisher = {ACM Press},
+title = {{Minimal cost set covering using probabilistic methods}},
+year = {1993}
+}
+
+@article{Company1978,
+author = {G. Nemhauser, L.A. Wolsey and M. L. Fisher},
+
+keywords = {greedy algorithm,heuristics,interchange algorithm,linear programming,matroid optimization,submodular set functions},
+pages = {265--294},
+title = {{An analysis of approximations for maximizing submodular set functions}},
+volume = {14},
+year = {1978}
+}
+
+@inproceedings{lopez,
+author = {P. Lopez Cueva and A. Bertaux and A. Termier and J.F. Mehaut and M. Santana},
+keywords = {debugging,embedded systems,multimedia applications,periodic pat-,tern mining},
+title = {{Debugging Embedded Multimedia Application Traces through Periodic Pattern Mining}},
+ booktitle = {Proceedings of International Conference on the Embedded Software},
+year={2012},
+}
+
+@inproceedings{Kulik,
+ author = {Kulik, Ariel and Shachnai, Hadas and Tamir, Tami},
+ title = {Maximizing submodular set functions subject to multiple linear constraints},
+ booktitle = {Proceedings of the twentieth Annual ACM-SIAM Symposium on Discrete Algorithms},
+ series = {SODA '09},
+ year = {2009},
+ location = {New York},
+ pages = {545--554},
+ acmid = {1496830},
+ publisher = {Society for Industrial and Applied Mathematics},
+} 
+ url = {http://dl.acm.org/citation.cfm?id=1496770.1496830},
+
+
+@inproceedings{Vondrak,
+ author = {Vondrak, Jan},
+ title = {Optimal approximation for the submodular welfare problem in the value oracle model},
+ booktitle = {Proceedings of the 40th annual ACM symposium on Theory of computing},
+ series = {STOC '08},
+ year = {2008},
+ location = {Victoria, British Columbia, Canada},
+ pages = {67--74},
+ numpages = {8},
+ doi = {10.1145/1374376.1374389},
+ acmid = {1374389},
+ publisher = {ACM},
+ address = {New York, USA},
+}
+ url = {http://doi.acm.org/10.1145/1374376.1374389},
+
+
+@inproceedings{Goel,
+ author = {Goel, Gagan and Mehta, Aranyak},
+ title = {Online budgeted matching in random input models with applications to Adwords},
+ booktitle = {Proceedings of the nineteenth annual ACM-SIAM symposium on Discrete algorithms},
+ series = {SODA '08},
+ year = {2008},
+ location = {San Francisco, California},
+ pages = {982--991},
+ numpages = {10},
+ acmid = {1347189},
+ publisher = {Society for Industrial and Applied Mathematics},
+ address = {Philadelphia, PA, USA},
+}
+url = {http://dl.acm.org/citation.cfm?id=1347082.1347189}
+
+
+@TECHREPORT{Streeter07,
+    author = {Matthew Streeter and Daniel Golovin},
+    title = {An online algorithm for maximizing submodular functions},
+    keywords = {online algorithms,submodular functions},
+    institution = {Carnegie Mellon University},
+    year = {2007},
+    series={CMU-CS-07-171}
+}
+
+@inproceedings{Ball,
+    author = {Ball, Thomas and Laboratories, Bell and Technologies, Lucent},
+    title = {{The Concept of Dynamic Analysis}},
+    booktitle={Proceedings of the 7th European Software Engineering Conference and the 7th ACM SIGSOFT Symposium on the Foundations of Software Engineering},
+    year={1999},
+    pages={216–234},
+    month={September}
+}
+
+
+@inproceedings{DBLP:conf/icdm/KengneFITRW12,
+  author    = {C. Kamdem Kengne and
+               L. C. Fopa and
+               N. Ibrahim and
+               Alexandre Termier and
+               Marie-Christine Rousset and
+               Takashi Washio},
+  title     = {Enhancing the Analysis of Large Multimedia Applications
+               Execution Traces with FrameMiner},
+  booktitle = {ICDM Workshops},
+  year      = {2012},
+  pages     = {595-602},
+  ee        = {http://doi.ieeecomputersociety.org/10.1109/ICDMW.2012.95},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+@inproceedings{upgrowth,
+ author = {Tseng, Vincent S. and Wu, Cheng-Wei and Shie, Bai-En and Yu, Philip S.},
+ title = {UP-Growth: an efficient algorithm for high utility itemset mining},
+ booktitle = {Proceedings of the 16th ACM SIGKDD international conference on Knowledge discovery and data mining},
+ series = {KDD '10},
+ year = {2010},
+ isbn = {978-1-4503-0055-1},
+ location = {Washington, DC, USA},
+ pages = {253--262},
+ numpages = {10},
+ acmid = {1835839},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {candidate pruning, frequent itemset, high utility itemset, utility mining},
+} 
+@article{HUI1,
+  title={Isolated items discarding strategy for discovering high utility itemsets},
+  author={Li, Yu-Chiang and Yeh, Jieh-Shan and Chang, Chin-Chen},
+  year={2007}
+}
+@inproceedings{HUI3,
+ author = {Wu, Cheng Wei and Shie, Bai-En and Tseng, Vincent S. and Yu, Philip S.},
+ title = {Mining top-K high utility itemsets},
+ booktitle = {Proceedings of the 18th ACM SIGKDD international conference on Knowledge discovery and data mining},
+ series = {KDD '12},
+ year = {2012},
+ isbn = {978-1-4503-1462-6},
+ location = {Beijing, China},
+ pages = {78--86},
+ numpages = {9},
+ doi = {10.1145/2339530.2339546},
+ acmid = {2339546},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {high utility itemset, top-k pattern mining, utility mining},
+} 
+@inproceedings{DHUI1,
+ author = {Liu, Mengchi and Qu, Junfeng},
+ title = {Mining high utility itemsets without candidate generation},
+ booktitle = {Proceedings of the 21st ACM international conference on Information and knowledge management},
+ series = {CIKM '12},
+ year = {2012},
+ isbn = {978-1-4503-1156-4},
+ location = {Maui, Hawaii, USA},
+ pages = {55--64},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2396761.2396773},
+ doi = {10.1145/2396761.2396773},
+ acmid = {2396773},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {high utility itemset, mining algorithm},
+} 
+@inproceedings{DHUI2,
+  title={Direct Discovery of High Utility Itemsets without Candidate Generation},
+  author={Liu, Junqiang and Wang, Ke and Fung, Benjamin},
+  booktitle={Data Mining (ICDM), 2012 IEEE 12th International Conference on},
+  pages={984--989},
+  year={2012},
+  organization={IEEE}
+}
+@inproceedings{SHUI,
+ author = {Yin, Junfu and Zheng, Zhigang and Cao, Longbing},
+ title = {USpan: an efficient algorithm for mining high utility sequential patterns},
+ booktitle = {Proceedings of the 18th ACM SIGKDD international conference on Knowledge discovery and data mining},
+ series = {KDD '12},
+ year = {2012},
+ isbn = {978-1-4503-1462-6},
+ location = {Beijing, China},
+ pages = {660--668},
+ numpages = {9},
+ doi = {10.1145/2339530.2339636},
+ acmid = {2339636},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {high utility sequential pattern mining, sequential pattern mining},
+} 
+
+@inproceedings{slim12,
+  title={SLIM: Directly mining descriptive patterns},
+  author={Smets, Koen and Vreeken, Jilles},
+  booktitle={Proc of the SDM},
+  volume={12},
+  year={2012}
+}
+
+@inproceedings{long12,
+  title={The long and the short of it: Summarising event sequences with serial episodes},
+  author={Tatti, Nikolaj and Vreeken, Jilles},
+  booktitle={Proceedings of the 18th ACM SIGKDD international conference on Knowledge discovery and data mining},
+  pages={462--470},
+  year={2012},
+  organization={ACM}
+}
+
+
+@inproceedings{finding12,
+  title={Finding minimum representative pattern sets},
+  author={Liu, Guimei and Zhang, Haojun and Wong, Limsoon},
+  booktitle={Proceedings of the 18th ACM SIGKDD international conference on Knowledge discovery and data mining},
+  pages={51--59},
+  year={2012},
+  organization={ACM}
+}
+@inproceedings{eventsum09,
+  title={EventSummarizer: a tool for summarizing large event sequences},
+  author={Kiernan, Jerry and Terzi, Evimaria},
+  booktitle={Proceedings of the 12th International Conference on Extending Database Technology: Advances in Database Technology},
+  pages={1136--1139},
+  year={2009},
+  organization={ACM}
+}
+@article{mpeg,
+  title={MPEG-4 natural video coding--An overview},
+  author={Ebrahimi, Touradj and Horne, Caspar},
+  journal={Signal Processing: Image Communication},
+  volume={15},
+  number={4},
+  pages={365--385},
+  year={2000},
+  publisher={Elsevier}
+}
+
+@PhdThesis{phdEgeblad,
+  author = 	 {Jens Egeblad},
+  title = 	 {Heuristics for Multidimensional Packing Problems},
+  school = 	 {University of Copenhagen, Department of Computer Science},
+  year = 	 {2008},
+  OPTannote = 	 {}
+}
+
+%%%%%%%%%%%%%%%%%%%%% BibTex for Distances%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{choi2010survey,
+  title={A Survey of Binary Similarity and Distance Measures.},
+  author={Choi, Seung-Seok and Cha, Sung-Hyuk and Tappert, Charles C},
+  journal={Journal of Systemics, Cybernetics \& Informatics},
+  volume={8},
+  number={1},
+  year={2010}
+}
+
+@article{dobrisek2009edit,
+  title={An edit-distance model for the approximate matching of timed strings},
+  author={Dobrisek, Simon and Zibert, Janez and Pavesic, Nikola and Mihelic, France},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={31},
+  number={4},
+  pages={736--741},
+  year={2009},
+  publisher={IEEE}
+}
+
+@article{vinga2003,
+  title={Alignment-free sequence comparison—a review},
+  author={Vinga, Susana and Almeida, Jonas},
+  journal={Bioinformatics},
+  volume={19},
+  number={4},
+  pages={513--523},
+  year={2003},
+  publisher={Oxford Univ Press}
+}
+
+@inproceedings{cohen2003,
+  title={A comparison of string metrics for matching names and records},
+  author={Cohen, William and Ravikumar, Pradeep and Fienberg, Stephen},
+  booktitle={KDD Workshop on Data Cleaning and Object Consolidation},
+  volume={3},
+  pages={73--78},
+  year={2003}
+}
+
+@inproceedings{leelearning,
+  title={Learning patterns from unix process execution traces for intrusion detection},
+  author={Lee, Wenke and Stolfo, Salvatore J and Chan, Philip K},
+  booktitle={AAAI Workshop on AI Approaches to Fraud Detection and Risk Management},
+  pages={50--56},
+  year={1997}
+}
+
+@inproceedings{sunmining,
+  title={Mining for Outliers in Sequential Databases.},
+  author={Sun, Pei and Chawla, Sanjay and Arunasalam, Bavani},
+  booktitle={SDM},
+  year={2006},
+  organization={SIAM}
+}
+
+@inproceedings{yemarkov,
+  title={A markov chain model of temporal behavior for anomaly detection},
+  author={Ye, Nong and Li, X},
+  booktitle={Proceedings of the 2000 IEEE Systems, Man, and Cybernetics Information Assurance and Security Workshop},
+  volume={166},
+  pages={169},
+  year={2000},
+  organization={Oakland: IEEE}
+}
+
+@article{guptaoutlier,
+  title={Outlier detection for temporal data: A survey},
+  author={Gupta, Manish and Gao, Jing and Aggarwal, C and Han, Jiawei},
+  publisher={IEEE}
+}
+@book{aggarwaloutlier,
+  title={Outlier analysis},
+  author={Aggarwal, Charu C},
+  year={2013},
+  publisher={Springer}
+}
+
+@inproceedings{warrender,
+  title={Detecting intrusions using system calls: Alternative data models},
+  author={Warrender, Christina and Forrest, Stephanie and Pearlmutter, Barak},
+  booktitle={Security and Privacy, 1999. Proceedings of the 1999 IEEE Symposium on},
+  pages={133--145},
+  year={1999},
+  organization={IEEE}
+}
+@article{hofmeyr,
+  title={Intrusion detection using sequences of system calls},
+  author={Hofmeyr, Steven A and Forrest, Stephanie and Somayaji, Anil},
+  journal={Journal of computer security},
+  volume={6},
+  number={3},
+  pages={151--180},
+  year={1998},
+  publisher={IOS Press}
+}
+
+@article{mantaci2008,
+  title={Distance measures for biological sequences: Some recent approaches},
+  author={Mantaci, Sabrina and Restivo, Antonio and Sciortino, Marinella},
+  journal={International Journal of Approximate Reasoning},
+  volume={47},
+  number={1},
+  pages={109--124},
+  year={2008},
+  publisher={Elsevier}
+}
+
+@article{Wu90,
+ author = {Wu, S. and Manber, U. and Myers, G. and Miller, W.},
+ title = {An O(NP) sequence comparison algorithm},
+ journal = {Inf. Process. Lett.},
+ issue_date = {Sep. 1990},
+ volume = {35},
+ number = {6},
+ month = sep,
+ year = {1990},
+ issn = {0020-0190},
+ pages = {317--323},
+ numpages = {7},
+ acmid = {96223},
+ publisher = {Elsevier North-Holland, Inc.},
+ address = {Amsterdam, The Netherlands, The Netherlands}
+} 
+
+
+@inproceedings{ck2013,
+  author    = {C. Kamdem Kengne and
+               L. C. Fopa and
+               Alexandre Termier and
+               N. Ibrahim and
+               Marie-Christine Rousset and
+               Takashi Washio and 
+               Miguel Santana},
+  title     = {Efficiently Rewriting Large Multimedia Application Execution Traces with few Event Sequences},
+  booktitle = {KDD Industrial Track (To appear)},
+  year      = {2013}
+}
+
+@misc{wiki,
+  title = {{Wikipedia} Knapsack problem},
+  howpublished = {\url{http://en.wikipedia.org/wiki/Knapsack_problem}},
+  note = {Accessed: 25/04/2014}
+}
+
+
+@misc{WinNT,
+  title = {{MS Windows NT} Kernel Description},
+  howpublished = {\url{http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm}},
+  note = {Accessed: 30/09/2012}
+}
+
+
+@misc{gstreamer,
+  author= {Gstreamer},
+  title = 	 {GStreamer Website},
+  url =      {http://www.gstreamer.net},
+  year={2014},
+  note = {Accessed: 26/02/2014}
+
+}
+
+@misc{vlc,
+  author= {VideoLAN},
+  title = 	 {VLC Website},
+  url =      {http://www.videolan.org/vlc/},
+  year={2014},
+  note = {Accessed: 20/03/2014}
+
+}
+
+
+@article{mpeg,
+  title={MPEG-4 natural video coding--An overview},
+  author={Ebrahimi, Touradj and Horne, Caspar},
+  journal={Signal Processing: Image Communication},
+  volume={15},
+  number={4},
+  pages={365--385},
+  year={2000},
+  publisher={Elsevier}
+}
+
+@article{morchen06,
+  title={Time series knowledge mining},
+  author={M{\"o}rchen, Fabian},
+  year={2006},
+  publisher={Citeseer}
+}
+
+@inproceedings{tavenard2007,
+  title={Estimation de similarit{\'e} entre s{\'e}quences de descripteurs {\`a} l'aide de machines {\`a} vecteurs supports},
+  author={Tavenard, Romain and Amsaleg, Laurent and Gravier, Guillaume},
+  booktitle={Proc. Conf. Base de Donn{\'e}es Avanc{\'e}es, Marseille, France},
+  year={2007}
+}
+
+@inproceedings{lcs00,
+  title={A survey of longest common subsequence algorithms},
+  author={Bergroth, Lasse and Hakonen, Harri and Raita, Timo},
+  booktitle={String Processing and Information Retrieval, 2000. SPIRE 2000. Proceedings. Seventh International Symposium on},
+  pages={39--48},
+  year={2000},
+  organization={IEEE}
+}
+
+@misc{tan06,
+  title={Kumar. Introduction to Data Mining},
+  author={Tan, PN and Steinbach, M},
+  year={2006},
+  publisher={Boston, MA: Addison Wesley Publishing}
+}
+
+@inproceedings{Mannila97,
+ author = {Mannila, H. and Ronkainen, P.},
+ title = {Similarity of event sequences},
+ booktitle = {Proceedings of the 4th International Workshop on Temporal Representation and Reasoning (TIME '97)},
+ series = {TIME '97},
+ year = {1997},
+ isbn = {0-8186-7937-9},
+ pages = {136--},
+ acmid = {832454},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA}
+} 
+@misc{mlpy,
+	author = {Davide Albanese and Roberto Visintainer and Stefano Merler and Samantha Riccadonna and Giuseppe Jurman and Cesare Furlanello},
+	title = {mlpy: Machine Learning Python},
+	journal = {},
+	year = 2012,
+	archiveprefix = "arXiv",
+	eprint = "1202.6548",
+	primaryclass = "cs"
+}
+@phdthesis{guerin10,
+author = {Xavier guérin},
+isbn = {9782848131542},
+title = {{Approche Efficace de D\'{e}veloppement de Logiciel Embarqu\'{e} pour des Syst\`{e}mes Multiprocesseurs sur Puce}},
+year = {2010}
+}
+
+@inproceedings{prada10,
+  title={Summarizing Embedded Execution Traces through a Compact View},
+  author={Prada-Rojas, Carlos and Santana, Miguel and De-Paoli, Serge and Raynaud, Xavier and others},
+  booktitle={Conference on System Software, SoC and Silicon Debug S4D},
+  year={2010}
+}
+
+
+@electronic{stlinux,
+  title = 	 {STLinux Website},
+  url =      {http://www.stlinux.com/}
+}
+
+@article{kprobes,
+  title={Kernel korner: kprobes-a kernel debugger},
+  author={Krishnakumar, R},
+  journal={Linux Journal},
+  volume={2005},
+  number={133},
+  pages={11},
+  year={2005},
+  publisher={Belltown Media}
+}
+
+@misc{bug1,
+  author = {cccp-project},
+  title = {Discussion page: Troubleshooting Guide},
+  howpublished = {\url{http://www.cccp-project.net/wiki/index.php?title=Troubleshooting\_Guide}},
+  year={2013},
+  month={Jan},
+  note = {Accessed: 2013-01-04}
+}
+
+year= {4/1/2013
+@electronic{bug2,
+  title = 	 {FAQ: Play an audio or video file},
+  author={Windows-forum},
+  url =      {http://windows.microsoft.com/en-us/windows7/play-an-audio-or-video-file-frequently-asked-questions},
+  year= {2013},
+  note = {Accessed: 2013-01-04}
+  
+}
+year= {4/1/2013}
+@electronic{bug3,
+  title = 	 {Forum: freebox revolution discussion},
+  author={Gene-forum},
+  url =      {http://www.generation-nt.com/freebox-revolution-nouveaux-problemes-avec-lecture-videos-actualite-1711302.html},
+  year= {2014}
+}
+year= {11/2/2014}
+
+@electronic{bug4,
+  title = 	 {Forum: freebox discussion},
+  author={Freebox-forum},
+  url =      {http://www.freebox-forum.net/forum/la-television-freebox/lecture-video-hd-1080p-mkv-saccadee-t7159963.html},
+  year= {2014}
+}
+year= {11/2/2014}
+
+@electronic{bug5,
+  title = 	 {Forum Woobees},
+  author={Woobees-forum},
+  url =      {http://forum.bouyguestelecom.fr/questions/467605-lecture-videos-bloque-via-media-center-bbox-sensation-freeze},
+   year= {2014}
+}
+year= {11/2/2014}
+
+@electronic{bug6,
+  title = 	 {Forum Numericable},
+  author={Numeric-forum},
+  url =      {http://entraide.numericable.fr/threads/2124-Lecture-fichiers-audio-et-vid%C3%A9os-via-media-center},
+   year= {2014}
+}
+year= {11/2/2014}
+
+@electronic{bug7,
+  title = 	 {Troubleshoot video files},
+  author={helpx-adobe},
+  url =      {http://helpx.adobe.com/premiere-elements/kb/troubleshoot-video-premiere-elements.html},
+   year= {2014}
+}
+year= {11/2/2014}
+
+@electronic{bug8,
+  title = 	 {Support: Microsoft},
+  author={microsoft-support},
+  url =      {http://support.microsoft.com/kb/265523},
+   year= {2014}
+}
+year= {11/2/2014}
+
+@electronic{bug9,
+  title = 	 {Wikipedia: A/V sync},
+  author={wiki-A/V},
+  url =      {http://en.wikipedia.org/wiki/Audio_to_video_synchronization},
+  year= {2014}
+}
+year= {11/2/2014}
+
+
+@electronic{bug10,
+  title = 	 {Forum: Hardware},
+  author={Hardware-forum},
+  url =      {http://forum.hardware.fr/hfr/VideoSon/Traitement-Video/probleme-codec-video-sujet_103890_1.htm},
+    year= {2014}
+}
+year= {11/2/2014}
+
+
+
+@electronic{hypodeduc2,
+ title = 	 {Hypothetico-deductive model},
+ author={Sociology-about}
+ url= {http://sociology.about.com/od/H_Index/g/Hypothetico-Deductive-Method.htm},
+ year= {2014}
+}
+year= {11/2/2014}
+
+@article{hypodeduc1,
+  title={Truth, content, and the hypothetico-deductive method},
+  author={Grimes, Thomas R},
+  journal={Philosophy of Science},
+  pages={514--522},
+  year={1990},
+  publisher={JSTOR}
+}
+
+@article{cha07,
+  title={Comprehensive survey on distance/similarity measures between probability density functions},
+  author={Cha, Sung-Hyuk},
+  journal={City},
+  volume={1},
+  number={2},
+  pages={1},
+  year={2007},
+  publisher={Citeseer}
+}
+
+@article{cha10,
+  title={A survey of binary similarity and distance measures},
+  author={Choi, Seung-Seok and Cha, Sung-Hyuk and Tappert, C},
+  journal={Journal of Systemics, Cybernetics and Informatics},
+  volume={8},
+  number={1},
+  pages={43--48},
+  year={2010}
+}
+
+@inproceedings{kos11,
+  title={Distance measure for querying sequences of temporal intervals},
+  author={Kostakis, Orestis and Papapetrou, Panagiotis and Hollm{\'e}n, Jaakko},
+  booktitle={Proceedings of the 4th International Conference on PErvasive Technologies Related to Assistive Environments},
+  pages={40},
+  year={2011},
+  organization={ACM}
+}
+
+@inproceedings{dtw,
+  title={Stream monitoring under the time warping distance},
+  author={Sakurai, Yasushi and Faloutsos, Christos and Yamamuro, Masashi},
+  booktitle={Data Engineering, 2007. ICDE 2007. IEEE 23rd International Conference on},
+  pages={1046--1055},
+  year={2007},
+  organization={IEEE}
+}
+
+@article{do09,
+  title={An edit-distance model for the approximate matching of timed strings},
+  author={Dobrisek, Simon and Zibert, Janez and Pavesic, Nikola and Mihelic, France},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={31},
+  number={4},
+  pages={736--741},
+  year={2009},
+  publisher={IEEE}
+}
+
+@incollection{gu12,
+  title={Toward Measuring the Similarity of Complex Event Sequences in Real-Time},
+  author={Gundersen, Odd Erik},
+  booktitle={Case-Based Reasoning Research and Development},
+  pages={107--121},
+  year={2012},
+  publisher={Springer}
+}
+
+@article{outsurvey11,
+  title={A survey of outlier detection methods in network anomaly identification},
+  author={Gogoi, Prasanta and Bhattacharyya, DK and Borah, B and Kalita, Jugal K},
+  journal={The Computer Journal},
+  volume={54},
+  number={4},
+  pages={570--588},
+  year={2011},
+  publisher={Br Computer Soc}
+}
+
+@inproceedings{tracevis,
+  title={TraceVis: an execution trace visualization tool},
+  author={Roberts, James},
+  booktitle={In Proc. MoBS 2005},
+  year={2005},
+  organization={Citeseer}
+}
+@inproceedings{vet,
+ author = {McGavin, Mike and Wright, Tim and Marshall, Stuart},
+ title = {Visualisations of execution traces (VET): an interactive plugin-based visualisation tool},
+ booktitle = {Proceedings of the 7th Australasian User interface conference - Volume 50},
+ series = {AUIC '06},
+ year = {2006},
+ isbn = {1-920682-32-5},
+ location = {Hobart, Australia},
+ pages = {153--160},
+ numpages = {8},
+ acmid = {1151780},
+ publisher = {Australian Computer Society, Inc.},
+ address = {Darlinghurst, Australia, Australia},
+ keywords = {execution traces, software visualisation},
+} 
+
+@techreport{surv08,
+  title={Techniques for visualizing software execution},
+  author={Seyster, Justin},
+  year={2008},
+  institution={Citeseer}
+}
+@article{pajef,
+author = {Stein, B De Oliveira},
+file = {:media/Training/Soc-TraceI/Lot3/Paj\`{e}TraceFileFormat.pdf:pdf},
+keywords = {mpi,parallel programming,performance debugging,pthread,self defined,visualization},
+title = {{Paj\'{e} trace file format}},
+year = {2003}
+}
+
+@article{paje,
+  title={Paj{\'e}, an interactive visualization tool for tuning multi-threaded parallel applications},
+  author={Chassin de Kergommeaux, J and Stein, B and Bernard, Pierre-Eric},
+  journal={Parallel Computing},
+  volume={26},
+  number={10},
+  pages={1253--1274},
+  year={2000},
+  publisher={Elsevier}
+}
+
+@article{kumar12,
+  title={Anomaly detection for discrete sequences: A survey},
+  author={Chandola, Varun and Banerjee, Arindam and Kumar, Vipin},
+  journal={Knowledge and Data Engineering, IEEE Transactions on},
+  volume={24},
+  number={5},
+  pages={823--839},
+  year={2012},
+  publisher={IEEE}
+}
+%% hal-00788812, version 1
+%% http://hal.inria.fr/hal-00788812
+@TechReport { kamdem:hal13,
+  author = {Kamdem Kengne, Christiane and Ibrahim, Noha and Rousset, Marie-Christine and Tchuenté, Maurice},
+  title = {{D}istance-based {T}race {D}iagnosis for {M}ultimedia {A}pplications: {H}elp me {TED} !},
+  institution = {{LIG}},
+  year = {2013},
+  number = {RR-LIG-045},
+  address = {Grenoble, France},
+  typepub = {Research Report},
+  series = {Les rapports de recherche du LIG},
+  type = {Research Report},
+  issn = {2105-0422},
+  pdf = {http://rr.liglab.fr/research_report/RR-LIG-045_orig.pdf}
+}
+@inproceedings{wong,
+  title={Finding comparable temporal categorical records: A similarity measure with an interactive visualization},
+  author={Wongsuphasawat, Krist and Shneiderman, Ben},
+  booktitle={Visual Analytics Science and Technology, 2009. VAST 2009. IEEE Symposium on},
+  pages={27--34},
+  year={2009},
+  organization={IEEE}
+}
+
+@article{Ronkainen1998,
+author = {Ronkainen, Pirjo},
+file = {:media/thesis/Soc-TraceI/Articles/Good\_Or\_Not/Thesis\_AttributeSimilarityAndEvtSeqSimInDM.pdf:pdf},
+number = {C},
+title = {{Attribute Similarity and Event Sequence Similarity in Data Mining}},
+volume = {26},
+year = {1998}
+}
+
+%%%%%%%%%%%%%%%%%%%%% General BibTex%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@book{embeddedSys,
+  title={Embedded system design: a unified hardware/software introduction},
+  author={Vahid, Frank and Givargis, Tony and Wiley, John},
+  volume={4},
+  year={2002},
+  publisher={John Wiley \& Sons New York, NY}
+}
+
+@misc{zdnet,
+  author= {Zdnet},
+  title = 	 {zdnet Website},
+  url =      {http://www.zdnet.fr/actualites/chiffres-cles-le-marche-des-tablettes-39789571.htm},
+  year={2014},
+  note = {Accessed: 17/03/2014}
+}
+
+@phdthesis{kevin,
+author = {Kevin Pouget},
+title = {Programming-Model Centric Debugging for Multicore Embedded Systems},
+year = {2014}
+}
+@phdthesis{patricia,
+author = {Patricia L´opez Cueva},
+title = {Debugging Embedded Multimedia Application Execution Traces through Periodic Pattern Mining},
+year = {2013}
+}
+@phdthesis{carlos,
+    hal_id = {tel-00621143},
+    url = {http://tel.archives-ouvertes.fr/tel-00621143},
+    title = {{Une approche {\`a} base de composants logiciels pour l'observation de syst{\`e}mes embarqu{\'e}s}},
+    author = {Prada Rojas, Carlos Hernan},
+ language = {Fran{\c c}ais},
+    affiliation = {Laboratoire d'Informatique de Grenoble - LIG},
+    school = {Universit{\'e} de Grenoble},
+    type = {THESE},
+    year = {2011},
+}
+@article{cornelissen2011,
+  title={A controlled experiment for program comprehension through trace visualization},
+  author={Cornelissen, Bas and Zaidman, Andy and van Deursen, Arie},
+  journal={Software Engineering, IEEE Transactions on},
+  volume={37},
+  number={3},
+  pages={341--355},
+  year={2011},
+  publisher={IEEE}
+}
+
+@inproceedings{Kraft,
+author = {Johan Kraft and Anders Wall and Holger Kienle},
+title = {Trace Recording for Embedded Systems: Lessons Learned from Five Industrial Projects},
+note = {Original publication is available at www.springerlink.com},
+month = {November},
+year = {2010},
+booktitle = {Proceedings of the First International Conference on Runtime Verification (RV 2010)},
+publisher = {Springer-Verlag (Lecture Notes in Computer Science)},
+url = {http://www.es.mdh.se/publications/1911-}
+}
+
+@inproceedings{garavel,
+  title={SEQ. OPEN: a tool for efficient trace-based verification},
+  author={Garavel, Hubert and Mateescu, Radu},
+  booktitle={Model Checking Software},
+  pages={151--157},
+  year={2004},
+  publisher={Springer}
+}
+
+@phdthesis{cormode,
+  title={Sequence distance embeddings},
+  author={Cormode, Graham},
+  year={2003},
+  school={Department of Computer Science}
+}
+
+@book{encyclodist,
+  title={Encyclopedia of distances},
+  author={Deza, Michel Marie and Deza, Elena},
+  year={2009},
+  publisher={Springer}
+}
+
+@misc{soctrace,
+  author= {SoC-Trace},
+  title = 	 {FUI project SoC-Trace},
+  url =      {http://www.minalogic.com/TPL_CODE/TPL_PROJET/PAR_TPL_IDENTIFIANT/2717/15-annuaire-innovations-technologiques-nanotechnologie-systeme-embarque.htm#.U0wUsaRdlEg},
+  year={2011},
+  note = {Accessed: 20/03/2014}
+
+}
+
+%#####################Related works#############################################
+
+@book{combi98,
+  title={Combinatorial optimization: algorithms and complexity},
+  author={Papadimitriou, Christos H and Steiglitz, Kenneth},
+  year={1998},
+  publisher={Courier Dover Publications}
+}
+@article{kiernan2009,
+  title={Constructing comprehensive summaries of large event sequences},
+  author={Kiernan, Jerry and Terzi, Evimaria},
+  journal={ACM Transactions on Knowledge Discovery from Data (TKDD)},
+  volume={3},
+  number={4},
+  pages={21},
+  year={2009},
+  publisher={ACM}
+}

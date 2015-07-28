@@ -1,0 +1,7 @@
+%\bibliographystyle{plainnat}
+\bibliographystyle{alpha}
+%\bibliographystyle{abbrvnat}
+%\bibliographystyle{plainnat-letters}
+\bibliography{tail/bibliothesis}
+\addcontentsline{toc}{part}{Bibliography}
+

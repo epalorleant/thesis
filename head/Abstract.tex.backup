@@ -1,0 +1,89 @@
+%\begingroup
+%\let\cleardoublepage\clearpage
+
+
+% English abstract
+\cleardoublepage
+\chapter*{Abstract}
+%\markboth{Abstract}{Abstract}
+\vspace{2cm}
+\addstarredchapter{Abstract (English/Français)}
+The abstract...
+%\section*{Abstract}
+%\addcontentsline{toc}{chapter}{Abstract (English/Français)} % adds an entry to the table of contents
+% put your text here
+% Nowadays, due to the increasing complexity in both the applications and the underlying hardware, it is difficult to understand what happens during the execution 
+% of these applications. 
+% Tracing techniques are commonly used to gather and provide information on application execution in the form of execution traces. 
+% The execution traces, which are sequences of events, can be very large (easily millions of events), hard to understand and thus require specific analysis tools. 
+% One critical case is the analysis of applications on embedded systems such as set-top boxes or smartphones, especially for understanding 
+% bugs of multimedia applications. In this thesis we propose two novel analysis techniques adapted to multimedia applications 
+%  on embedded systems. \\
+% 
+% The first method reduces size of trace given to the analysts. This method needs to group sets of related events together. 
+% We propose an approach based on optimization and pattern mining techniques to automatically extract a set of subsequences from 
+% an execution trace. Our experiments showed that the method scales on large amounts of 
+% data and at the same time, highlighted the practical interest of this approach.\\
+% 
+% Our second contribution consists in proposing a diagnosis method based on the comparison of execution traces with reference traces. 
+% This approach is implemented in {\em TED}, our TracE Diagnosis tool. 
+% Experiments conducted on real-life use cases of multimedia application 
+%  execution traces have validated that {\em TED} is scalable and brings 
+% added value to traces analysis. We also show that the tool can be applied on reduced size traces in order to further improve scalability.
+
+% The usage of execution traces as an analysis tool is increasingly common in many fields, particularly for debugging 
+% multimedia applications in embedded systems. Execution traces are timestamped events sequences. 
+% Their manual exploitation is almost impossible due to the large volume of information they contain. In this thesis, we propose two main techniques 
+% that help capturing anomalies related to multimedia applications.\\
+% 
+% We first propose a method to extract a set of subsequences called {\em blocks}, from a sequence of events in order to abstract the trace and reduce 
+% its size. These subsequences have the particularity to help the understanding of execution trace. Our experiments applied to multimedia applications traces 
+% showed that the method scales on large amount of data. We also highlighted the practical interest of extracted blocks.\\
+% Our second contribution consists in proposing a diagnosis method based on the comparison of execution  traces. This approach is 
+% implemented in {\em TED}, our TracE Diagnosis tool. 
+% Experiments and use cases conducted have validated that TED is scalable, has good precision and brings 
+% added value to traces analysis. We later open a way towards an application of distances on reduced traces for improving the approach.
+%\lipsum[1-2]
+\vskip2cm
+\textbf{Keywords:} execution trace, multimedia applications, sequence mining, optimization, dissimilarity measures, anomalies detection.
+%put your text here
+
+
+%\vspace{5cm}
+
+% French abstract
+\begin{otherlanguage}{french}
+\cleardoublepage
+\chapter*{Résumé}
+\vspace{2cm}
+%\section*{Résumé}
+%\markboth{Résumé}{Résumé}
+% put your text here
+% De nos jours, dû à la complexité croissante des applications et du matériel, il est difficile de comprendre ce qui se passe durant l'exécution 
+% de ces applications. Les techniques de traçage sont communément utilisées pour collecter et fournir les informations sur l'application 
+% sous forme de traces d'exécution. Les traces d'exécution, qui sont des séquences d'événements, peuvent être très volumineuses 
+% (elles atteignent facilement des millions d'événements), 
+% difficiles à comprendre et donc nécessitent des outils d'analyse spécifiques. Un cas critique est l'analyse d'applications pour systèmes embarqués 
+% tels les décodeurs ou les smartphones, en particulier pour comprendre les bugs d'applications multimédias. Dans cette thèse, nous proposons 
+% deux nouvelles techniques adaptées aux applications multimédia sur systèmes embarqués.\\
+% 
+% La première méthode réduit la taille de la trace donnée aux analystes. Cette méthode nécessite de regrouper un ensemble d'événements connexes. 
+% Nous proposons une approche basée sur des techniques d'optimisation et de fouille de motifs afin d'extraire automatiquement un ensemble de 
+% sous-séquences d'une trace. Nos expérimentations ont montré que cette méthode passe à l'échelle sur de gros volumes de données, et ont par la même 
+% occasion mis en évidence l'intérêt pratique de cette approche.\\
+% 
+% La seconde contribution consiste en la mise en place d'une méthode de diagnostic basée sur la comparaison de traces d'exécution avec des traces 
+% de référence. Cette méthode est implémentée dans {\em TED}, notre outil de diagnostic de traces. 
+% Les expérimentations faites sur des cas d'utilisation concrets de traces d'exécution multimédia ont validé que {\em TED} passe à l'échelle et apporte 
+% une plus-value à l'analyse de traces. Nous montrons aussi que l'outil peut être appliqué sur des traces de taille réduite 
+% afin d'améliorer davantage le passage à l'échelle.
+
+%\lipsum[1-2]
+\vskip1.5cm
+\textbf{Mots clefs}: event stream processing, complex event processing, distributed systems, smart grids, Quality of service. 
+%put your text here
+\end{otherlanguage}
+
+
+%\endgroup			
+%\vfill

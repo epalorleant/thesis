@@ -1,0 +1,34 @@
+%\begingroup
+%\let\cleardoublepage\clearpage
+
+
+% English abstract
+\cleardoublepage
+\chapter{Abstract}
+%\markboth{Abstract}{Abstract}
+\addstarredchapter{Abstract (English/Français)}
+%\addcontentsline{toc}{chapter}{Abstract (English/Français)} % adds an entry to the table of contents
+% put your text here
+%\lipsum[1-2]
+\vskip0.5cm
+Key words: 
+%put your text here
+
+
+
+
+% French abstract
+\begin{otherlanguage}{french}
+\cleardoublepage
+\chapter{Résumé}
+%\markboth{Résumé}{Résumé}
+% put your text here
+%\lipsum[1-2]
+\vskip0.5cm
+Mots clefs: 
+%put your text here
+\end{otherlanguage}
+
+
+%\endgroup			
+%\vfill

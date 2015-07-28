@@ -1,0 +1,10 @@
+\section{Discovering blocks for event sequences covering: Problem statement}
+\label{p1:chap_pb}
+
+
+  \subsection{generalities}
+
+%utiliser pour justifier le découpage en frames et généraliser par un découpage par fenêtre de temps, qui nécessite uin avis d'expert
+\cite{Study on Video DM} recalls that the semantic information used to identify the video events has two important aspects: (i) A spatial aspect presented 
+by a video frame, such as the location, characters and objects displayed in the video frame. (ii) A temporal aspect presented by a sequence of video frames 
+in time such as movements of the objects presented.

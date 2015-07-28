@@ -1,0 +1,43 @@
+\select@language {english}
+\contentsline {chapter}{Remerciements}{v}{chapter*.1}
+\contentsline {starchapter}{Abstract (English/Fran\IeC {\c c}ais)}{vii}{chapter*.2}
+\select@language {french}
+\select@language {english}
+\contentsline {chapter}{List of figures}{xii}{chapter*.4}
+\contentsline {chapter}{List of tables}{xiii}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Background and related works}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Event Streams Composition Model}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{6}{section.3.1}
+\contentsline {section}{\numberline {3.2}Event, event type, event streams}{6}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Event}{6}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Event type}{7}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Simple event type, complex event type}{7}{subsection.3.2.3}
+\contentsline {subsubsection}{Simple event type}{8}{figure.caption.9}
+\contentsline {subsubsection}{Complex event type}{8}{figure.caption.9}
+\contentsline {subsection}{\numberline {3.2.4}Event streams}{8}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Stream based operators}{9}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Filter}{9}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Logic operators}{9}{subsection.3.3.2}
+\contentsline {subsubsection}{Disjunction}{9}{subsection.3.3.2}
+\contentsline {subsubsection}{Conjunction}{9}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Sequence}{10}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Windows}{10}{subsection.3.3.4}
+\contentsline {subsubsection}{Time based windows}{10}{subsection.3.3.4}
+\contentsline {subsubsection}{Size bounded windows}{10}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Aggregator}{11}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Selection operators}{11}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.7}Flatten}{12}{subsection.3.3.7}
+\contentsline {section}{\numberline {3.4}Selection policy}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}Event composition graph}{13}{section.3.5}
+\contentsline {section}{\numberline {3.6}Quality of service}{13}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}QoS dimensions}{14}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}QoS expression}{14}{subsection.3.6.2}
+\contentsline {subsubsection}{Atomic QoS expression}{15}{subsection.3.6.2}
+\contentsline {subsubsection}{Complex QoS expression}{15}{subsection.3.6.2}
+\contentsline {section}{\numberline {3.7}Conclusion}{16}{section.3.7}
+\contentsline {chapter}{\numberline {A}French Summary}{17}{appendix.A}
+\select@language {french}
+\contentsline {section}{\numberline {A.1}Introduction}{17}{section.A.1}
+\select@language {english}
+\contentsline {part}{Bibliography}{19}{appendix*.13}

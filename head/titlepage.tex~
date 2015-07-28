@@ -1,0 +1,39 @@
+\begin{titlepage}
+\begin{center}
+%\large
+\sffamily
+
+
+\null\vspace{2cm}
+{\huge Abstraction and Comparison of Execution Traces for Embedded Multimedia Applications Analysis} \\[24pt] 
+\textcolor{gray}{\small{THIS IS A TEMPORARY TITLE PAGE \\ It will be replaced for the final print by a version \\ provided by the service academique.}}
+    
+\vfill
+
+\begin{tabular} {cc}
+\parbox{0.3\textwidth}{\includegraphics[scale=0.25]{images/UDGUYI}}
+ &
+ \parbox{0.7\textwidth}{%
+  	Thèse n. \\
+  	présenté le --- 2014\\
+ 	Université de Grenoble, Université de Yaoundé I\\[6pt]
+ 	pour l'obtention du grade de Docteur\\
+  	par\\ [4pt]
+  	\null \hspace{3em} Christiane KAMDEM\\[9pt]
+   \small
+  acceptée sur proposition du jury:\\[4pt]
+      Prof Name Surname, président du jury\\
+      Prof Name Surname, examinateur\\
+      Prof Name Surname, rapporteur\\
+      Prof Name Surname, rapporteur\\
+      Prof Name Surname, rapporteur\\[12pt]
+  %
+ Grenoble,UDG, 2014
+}
+\end{tabular}
+\end{center}
+\vspace{2cm}
+\end{titlepage}
+
+
+

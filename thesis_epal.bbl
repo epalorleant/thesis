@@ -1,0 +1,46 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{YBMM94}
+
+\bibitem[BGP{\etalchar{+}}94]{Bailey1994}
+M~L Bailey, Burra Gopal, Michael Pagels, L~L Peterson, and Prasenjit Sarkar.
+\newblock {PATHFINDER: A Pattern-Based Packet Classifier}.
+\newblock (JANUARY 1994):115--123, 1994.
+
+\bibitem[CC96]{Collet96}
+Christine Collet and T.\ {}Coupaye.
+\newblock {Primitive and Composite Events in O2 Rules}.
+\newblock In {\em Actes des 12i\`{e}mes Journ\'{e}es Bases de Donn\'{e}es
+  Avanc\'{e}es}, 1996.
+
+\bibitem[CM94]{Chakravarthy1994}
+S.~Chakravarthy and D.~Mishra.
+\newblock {Snoop: An expressive event specification language for active
+  databases}, 1994.
+
+\bibitem[GD94]{Gatziu1994}
+S.~Gatziu and K.R. Dittrich.
+\newblock {Detecting composite events in active database systems using Petri
+  nets}.
+\newblock {\em Proceedings of IEEE International Workshop on Research Issues in
+  Data Engineering: Active Databases Systems}, 1994.
+
+\bibitem[MsSS97]{Mansouri97gem}
+Masoud Mansouri-samani, Morris Sloman, and Morris Sloman.
+\newblock Gem - a generalised event monitoring language for distributed
+  systems.
+\newblock {\em IEE/IOP/BCS Distributed Systems Engineering Journal}, 4, 1997.
+
+\bibitem[RW97]{Rosenblum97}
+David~S Rosenblum and Alexander~L Wolf.
+\newblock {A design framework for Internet-scale event observation and
+  notification}.
+\newblock {\em ACM SIGSOFT Software Engineering Notes}, 22(6):344--360, 1997.
+
+\bibitem[YBMM94]{Yuhara1994}
+Masanobu Yuhara, Brian~N Bershad, Chris Maeda, and J~Eliot~B Moss.
+\newblock {Efficient Packet Demultiplexing for Multiple Endpoints and
+  LargeMessages.}
+\newblock In {\em WTEC'94: Proceedings of the USENIX Winter 1994 Technical
+  Conference on USENIX Winter 1994 Technical Conference}, page~13, 1994.
+
+\end{thebibliography}

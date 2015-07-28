@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%% BibTex for Abstraction%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ARTICLE{Mansouri97gem,
+    author = {Masoud Mansouri-samani and Morris Sloman and Morris Sloman},
+    title = {GEM - A Generalised Event Monitoring Language for Distributed Systems},
+    journal = {IEE/IOP/BCS Distributed Systems Engineering Journal},
+    year = {1997},
+    volume = {4}
+}
+
+@article{Rosenblum97,
+abstract = {There is increasing interest in having software systems execute and interoperate over the Internet, Execution and interoperation at this scale imply a degree of loose coupling and heterogeneity among the components from which such systems will be built. One common architectural style for distributed, loosely-coupled, heterogeneous software systems is a structure based on event generation, observation and notification. The technology to support this approach is well-developed for local area networks, but it is ill-suited to networks on the scale of the Internet, Hence, new technologies are needed to support the construction of large-scale, event-based software systems for the Internet. We have begun to design a new facility for event observation and notification that better serves the needs of Internet-scale applications In this paper we present results from our first step in this design process, in which we defined a framework that captures many of the relevant design dimensions: Our framework comprises seven models-an object model, an event model, a naming model, an observation model, a time model, a notification model, and a resource model, The paper discusses each of these models in detail and illustrates them using an example involving an update to a Web page. The paper also evaluates three existing technologies with respect to the seven models.},
+author = {Rosenblum, David S and Wolf, Alexander L},
+doi = {10.1145/267896.267920},
+editor = {Jazayeri, Mehdi and Schauer, Helmut},
+issn = {01635948},
+journal = {ACM SIGSOFT Software Engineering Notes},
+number = {6},
+pages = {344--360},
+publisher = {Springer-Verlag},
+series = {Lecture Notes in Computer Science},
+title = {{A design framework for Internet-scale event observation and notification}},
+url = {http://portal.acm.org/citation.cfm?doid=267896.267920},
+volume = {22},
+year = {1997}
+}
+
+@inproceedings{Yuhara1994,
+abstract = {This paper describes a new packet filter mechanism that efficiently$\backslash$ndispatches incoming network packets to one of multiple endpoints,$\backslash$nfor example address spaces. Earlier packet filter systems iteratively$\backslash$napplied each installed filter against every incoming packet, resulting$\backslash$nin high processing overhead whenever multiple filters existed. Our$\backslash$nnew packet filter provides an associative match function that enables$\backslash$nsimilar but not identical filters to be combined together into a$\backslash$nsingle filter. The filter mechanism, which we call the Mach Packet$\backslash$nFilter (MPF), has been implemented for the Mach 3.0 operating system$\backslash$nand is being used to support endpoint-based protocol processing,$\backslash$nwhereby each address space implements its own suite of network protocols.$\backslash$nWith large numbers of registered endpoints, MPF outperforms the earlier$\backslash$nBSD Packet Filter (BPF) by over a factor of four. MPF also allows$\backslash$na filter program to dispatch fragmented packets, which was quite$\backslash$ndifficult with previous filter mechanisms.},
+author = {Yuhara, Masanobu and Bershad, Brian N and Maeda, Chris and Moss, J Eliot B},
+booktitle = {WTEC'94: Proceedings of the USENIX Winter 1994 Technical Conference on USENIX Winter 1994 Technical Conference},
+pages = {13},
+title = {{Efficient Packet Demultiplexing for Multiple Endpoints and LargeMessages.}},
+year = {1994}
+}
+
+@article{Bailey1994,
+abstract = {This paper describes a pattern-based approach to building$\backslash$npacket classifiers. One novelty of the approach is that it can be$\backslash$nimplemented efficiently in both software and hardware. A performance$\backslash$nstudy shows that the software implementation is about twice as fast as$\backslash$nexisting mechanisms, and that the hardware implementation is currently$\backslash$nable to keep up with OC- 12 (622Mbps) network links and is likely to$\backslash$noperate at gigabit speeds in the near future.},
+author = {Bailey, M L and Gopal, Burra and Pagels, Michael and Peterson, L L and Sarkar, Prasenjit},
+number = {JANUARY 1994},
+pages = {115--123},
+title = {{PATHFINDER: A Pattern-Based Packet Classifier}},
+year = {1994}
+}
+
+@misc{Chakravarthy1994,
+abstract = {Making a database system active to meet the requirements of a wide range of applications entails developing an expressive event specification language and its implementation. Extant systems support mostly database events and in some cases a few predefined events. This paper discusses an event specification language (termed Snoop) for active databases. We define an event, distinguish between events and conditions, classify events into a class hierarchy, identify primitive events, and introduce a small number of event operators for constructing composite (or complex) events. Snoop supports temporal, explicit, and composite events in addition to the traditional database events. The novel aspect of our work lies not only in supporting a rich set of events and event expressions, but also in the notion of parameter contexts. Essentially, parameter contexts augment the semantics of composite events for computing their parameters. For concreteness, we present parameter computation for the relational model. Finally, we show how a contingency plan that includes time constraints can be supported without stepping outside of the framework proposed in this paper (20 Refs.)},
+author = {Chakravarthy, S. and Mishra, D.},
+booktitle = {Data \& Knowledge Engineering},
+doi = {10.1016/0169-023X(94)90006-X},
+issn = {0169023X},
+number = {1},
+pages = {1--26},
+title = {{Snoop: An expressive event specification language for active databases}},
+volume = {14},
+year = {1994}
+}
+

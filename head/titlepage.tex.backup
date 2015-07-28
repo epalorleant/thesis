@@ -1,0 +1,44 @@
+\begin{titlepage}
+\begin{center}
+%\large
+\sffamily
+
+
+\null\vspace{2cm}
+{\color{blue}\rule{\linewidth}{2pt}}\\
+\vspace{0.5cm}
+{\huge Abstraction and comparison of execution traces for analysis of embedded multimedia applications} \\[24pt] 
+{\color{blue}\rule{\linewidth}{2pt}}
+%\textcolor{gray}{\small{THIS IS A TEMPORARY TITLE PAGE \\ It will be replaced for the final print by a version \\ provided by the service academique.}}
+    
+\vfill
+
+\begin{tabular} {cc}
+\parbox{0.3\textwidth}{\includegraphics[scale=0.25]{images/UDGUYI}}
+ &
+ \parbox{0.7\textwidth}{%
+  	%Thèse n. \\
+  	présenté le 5 décembre 2014\\
+ 	Université de Grenoble, Université de Yaoundé I\\[6pt]
+ 	pour l'obtention du grade de Docteur en Informatique\\
+  	par\\ [4pt]
+  	\null \hspace{3em} {\color{blue} Christiane KAMDEM}\\[9pt]
+   \small
+  acceptée sur proposition du jury:\\[4pt]
+  Pr Laks V.S. LAKSHMANAN, Rapporteur\\
+  Pr Pascal PONCELET, Rapporteur\\
+  Pr Alexandre TERMIER, Examinateur\\
+  Pr Éric GAUSSIER, Examinateur\\
+  Pr Marie-Christine ROUSSET\\
+  Pr Maurice TCHUENTE, Co-directeur de thèse\\
+  Dr Noha IBRAHIM, Co-encadrante de thèse\\[12pt]
+  %
+ Grenoble,UDG, 2014
+}
+\end{tabular}
+\end{center}
+\vspace{2cm}
+\end{titlepage}
+
+
+
