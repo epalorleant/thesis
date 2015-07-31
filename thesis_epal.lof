@@ -12,9 +12,11 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Event\relax }}{7}{figure.caption.7}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Classification of event types\relax }}{8}{figure.caption.9}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Operator synopsis\relax }}{9}{figure.caption.10}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example situation where a selection policy should be applied\relax }}{12}{figure.caption.11}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example situation where a selection policy should be applied\relax }}{13}{figure.caption.11}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Event composition graph\relax }}{13}{figure.caption.12}
 \addvspace {10\p@ }
-\contentsline {xchapter}{French Summary}{17}{appendix.A}
+\contentsline {xchapter}{Event Processing Network}{17}{chapter.4}
+\addvspace {10\p@ }
+\contentsline {xchapter}{French Summary}{19}{appendix.A}
 \select@language {french}
 \select@language {english}

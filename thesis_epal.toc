@@ -22,22 +22,23 @@
 \contentsline {subsubsection}{Disjunction}{9}{subsection.3.3.2}
 \contentsline {subsubsection}{Conjunction}{9}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Sequence}{10}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Windows}{10}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.4}Window operators}{10}{subsection.3.3.4}
 \contentsline {subsubsection}{Time based windows}{10}{subsection.3.3.4}
-\contentsline {subsubsection}{Size bounded windows}{10}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Aggregator}{11}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Selection operators}{11}{subsection.3.3.6}
+\contentsline {subsubsection}{Size bounded windows}{11}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Aggregation operators}{11}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Selection operators}{12}{subsection.3.3.6}
 \contentsline {subsection}{\numberline {3.3.7}Flatten}{12}{subsection.3.3.7}
 \contentsline {section}{\numberline {3.4}Selection policy}{12}{section.3.4}
 \contentsline {section}{\numberline {3.5}Event composition graph}{13}{section.3.5}
-\contentsline {section}{\numberline {3.6}Quality of service}{13}{section.3.6}
+\contentsline {section}{\numberline {3.6}Quality of service}{14}{section.3.6}
 \contentsline {subsection}{\numberline {3.6.1}QoS dimensions}{14}{subsection.3.6.1}
 \contentsline {subsection}{\numberline {3.6.2}QoS expression}{14}{subsection.3.6.2}
 \contentsline {subsubsection}{Atomic QoS expression}{15}{subsection.3.6.2}
 \contentsline {subsubsection}{Complex QoS expression}{15}{subsection.3.6.2}
 \contentsline {section}{\numberline {3.7}Conclusion}{16}{section.3.7}
-\contentsline {chapter}{\numberline {A}French Summary}{17}{appendix.A}
+\contentsline {chapter}{\numberline {4}Event Processing Network}{17}{chapter.4}
+\contentsline {chapter}{\numberline {A}French Summary}{19}{appendix.A}
 \select@language {french}
-\contentsline {section}{\numberline {A.1}Introduction}{17}{section.A.1}
+\contentsline {section}{\numberline {A.1}Introduction}{19}{section.A.1}
 \select@language {english}
-\contentsline {part}{Bibliography}{19}{appendix*.13}
+\contentsline {part}{Bibliography}{21}{appendix*.13}

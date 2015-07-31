@@ -12,15 +12,15 @@
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Disjunction}{\reset@font\mtcSSSfont 9}{subsection.3.3.2}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Conjunction}{\reset@font\mtcSSSfont 9}{subsection.3.3.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Sequence}{\reset@font\mtcSSfont 10}{subsection.3.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.4}Windows}{\reset@font\mtcSSfont 10}{subsection.3.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.4}Window operators}{\reset@font\mtcSSfont 10}{subsection.3.3.4}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Time based windows}{\reset@font\mtcSSSfont 10}{subsection.3.3.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Size bounded windows}{\reset@font\mtcSSSfont 10}{subsection.3.3.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.5}Aggregator}{\reset@font\mtcSSfont 11}{subsection.3.3.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.6}Selection operators}{\reset@font\mtcSSfont 11}{subsection.3.3.6}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Size bounded windows}{\reset@font\mtcSSSfont 11}{subsection.3.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.5}Aggregation operators}{\reset@font\mtcSSfont 11}{subsection.3.3.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.6}Selection operators}{\reset@font\mtcSSfont 12}{subsection.3.3.6}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.7}Flatten}{\reset@font\mtcSSfont 12}{subsection.3.3.7}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Selection policy}{\reset@font\mtcSfont 12}{section.3.4}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Event composition graph}{\reset@font\mtcSfont 13}{section.3.5}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.6}Quality of service}{\reset@font\mtcSfont 13}{section.3.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.6}Quality of service}{\reset@font\mtcSfont 14}{section.3.6}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.6.1}QoS dimensions}{\reset@font\mtcSSfont 14}{subsection.3.6.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.6.2}QoS expression}{\reset@font\mtcSSfont 14}{subsection.3.6.2}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Atomic QoS expression}{\reset@font\mtcSSSfont 15}{subsection.3.6.2}}
