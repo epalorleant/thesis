@@ -4,28 +4,26 @@
 \BOOKMARK [0][-]{chapter*.5}{List of tables}{}% 4
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
 \BOOKMARK [0][-]{chapter.2}{Background and related works}{}% 6
-\BOOKMARK [0][-]{chapter.3}{Event Streams Composition Model}{}% 7
-\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 8
-\BOOKMARK [1][-]{section.3.2}{Event, event type, event streams}{chapter.3}% 9
-\BOOKMARK [2][-]{subsection.3.2.1}{Event}{section.3.2}% 10
-\BOOKMARK [2][-]{subsection.3.2.2}{Event type}{section.3.2}% 11
-\BOOKMARK [2][-]{subsection.3.2.3}{Simple event type, complex event type}{section.3.2}% 12
-\BOOKMARK [2][-]{subsection.3.2.4}{Event streams}{section.3.2}% 13
-\BOOKMARK [1][-]{section.3.3}{Stream based operators}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.3.1}{Filter}{section.3.3}% 15
-\BOOKMARK [2][-]{subsection.3.3.2}{Logic operators}{section.3.3}% 16
-\BOOKMARK [2][-]{subsection.3.3.3}{Sequence}{section.3.3}% 17
-\BOOKMARK [2][-]{subsection.3.3.4}{Window operators}{section.3.3}% 18
-\BOOKMARK [2][-]{subsection.3.3.5}{Aggregation operators}{section.3.3}% 19
-\BOOKMARK [2][-]{subsection.3.3.6}{Selection operators}{section.3.3}% 20
-\BOOKMARK [2][-]{subsection.3.3.7}{Flatten}{section.3.3}% 21
-\BOOKMARK [1][-]{section.3.4}{Selection policy}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.5}{Event composition graph}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.6}{Quality of service}{chapter.3}% 24
-\BOOKMARK [2][-]{subsection.3.6.1}{QoS dimensions}{section.3.6}% 25
-\BOOKMARK [2][-]{subsection.3.6.2}{QoS expression}{section.3.6}% 26
-\BOOKMARK [1][-]{section.3.7}{Conclusion}{chapter.3}% 27
-\BOOKMARK [0][-]{chapter.4}{Event Processing Network}{}% 28
-\BOOKMARK [0][-]{appendix.A}{French Summary}{}% 29
-\BOOKMARK [1][-]{section.A.1}{Introduction}{appendix.A}% 30
-\BOOKMARK [-1][-]{appendix*.13}{Bibliography}{}% 31
+\BOOKMARK [0][-]{chapter.3}{An Event Streams Composition Model}{}% 7
+\BOOKMARK [1][-]{section.3.1}{Event, event type, event streams}{chapter.3}% 8
+\BOOKMARK [2][-]{subsection.3.1.1}{Event}{section.3.1}% 9
+\BOOKMARK [2][-]{subsection.3.1.2}{Event type}{section.3.1}% 10
+\BOOKMARK [1][-]{section.3.2}{Stream based composition operators}{chapter.3}% 11
+\BOOKMARK [2][-]{subsection.3.2.1}{Filter}{section.3.2}% 12
+\BOOKMARK [2][-]{subsection.3.2.2}{Logic operators}{section.3.2}% 13
+\BOOKMARK [2][-]{subsection.3.2.3}{Sequence}{section.3.2}% 14
+\BOOKMARK [2][-]{subsection.3.2.4}{Window operators}{section.3.2}% 15
+\BOOKMARK [2][-]{subsection.3.2.5}{Aggregation operators}{section.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.2.6}{Selection operators}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.7}{Flatten}{section.3.2}% 18
+\BOOKMARK [1][-]{section.3.3}{Event composition graph}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Quality of service}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.4.1}{QoS dimensions}{section.3.4}% 21
+\BOOKMARK [2][-]{subsection.3.4.2}{QoS expression}{section.3.4}% 22
+\BOOKMARK [1][-]{section.3.5}{Conclusion}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{DESC: A Distributed Event Stream Composition system}{}% 24
+\BOOKMARK [1][-]{section.4.1}{General architecture / Event processing network}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{Event producer}{chapter.4}% 26
+\BOOKMARK [0][-]{appendix.A}{French Summary}{}% 27
+\BOOKMARK [1][-]{section.A.1}{Introduction}{appendix.A}% 28
+\BOOKMARK [-1][-]{appendix*.17}{Bibliography}{}% 29

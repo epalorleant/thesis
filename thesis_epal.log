@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.7.6)  31 JUL 2015 12:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.7.6)  24 AUG 2015 00:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1140,6 +1140,11 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip70
 \dth@everypar=\toks35
 )
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen183
+\epsfysize=\dimen184
+)
 (/usr/share/texlive/texmf-dist/tex/latex/minitoc/minitoc.sty
 Package: minitoc 2008/07/16 v60 Package minitoc (JPFD)
 
@@ -1207,11 +1212,11 @@ Package: amstext 2000/06/29 v2.01
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks37
-\ex@=\dimen183
+\ex@=\dimen185
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen184
+\pmbraise@=\dimen186
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
@@ -1228,7 +1233,7 @@ LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box42
 \strutbox@=\box43
-\big@size=\dimen185
+\big@size=\dimen187
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count158
@@ -1241,12 +1246,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \column@=\count163
 \maxfields@=\count164
 \andhelp@=\toks39
-\eqnshift@=\dimen186
-\alignsep@=\dimen187
-\tagshift@=\dimen188
-\tagwidth@=\dimen189
-\totwidth@=\dimen190
-\lineht@=\dimen191
+\eqnshift@=\dimen188
+\alignsep@=\dimen189
+\tagshift@=\dimen190
+\tagwidth@=\dimen191
+\totwidth@=\dimen192
+\lineht@=\dimen193
 \@envbody=\toks40
 \multlinegap=\skip75
 \multlinetaggap=\skip76
@@ -1297,8 +1302,8 @@ Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen192
-\extrarowheight=\dimen193
+\col@sep=\dimen194
+\extrarowheight=\dimen195
 \NC@list=\toks42
 \extratabsurround=\skip77
 \backup@length=\skip78
@@ -1334,7 +1339,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@algorithm=\count170
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen194
+\bigstrutjot=\dimen196
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
@@ -1345,13 +1350,13 @@ Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen195
-\captionmargin@=\dimen196
-\captionwidth=\dimen197
-\caption@tempdima=\dimen198
-\caption@indent=\dimen199
-\caption@parindent=\dimen200
-\caption@hangindent=\dimen201
+\captionmargin=\dimen197
+\captionmargin@=\dimen198
+\captionwidth=\dimen199
+\caption@tempdima=\dimen200
+\caption@indent=\dimen201
+\caption@parindent=\dimen202
+\caption@hangindent=\dimen203
 )
 \c@ContinuedFloat=\count171
 Package caption Info: float package is loaded.
@@ -1359,14 +1364,11 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: subfigure package is loaded.
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 50.
+Package hyperref Info: Option `breaklinks' set `true' on input line 51.
 )
 (./thesis_epal.aux (./intro/intro.aux) (./chap2/chap2.aux) (./chap3/chap3.aux)
-(./chap4/chap4.aux
-
-LaTeX Warning: Label `ch3' multiply defined.
-
-) (./chap5/chap5.aux) (./French_summary.aux) (./tail/biblio.aux))
+(./chap4/chap4.aux) (./chap5/chap5.aux) (./French_summary.aux)
+(./tail/biblio.aux))
 \openout1 = `thesis_epal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -1426,13 +1428,13 @@ LaTeX Info: Redefining \up on input line 18.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count172
-\scratchdimen=\dimen202
+\scratchdimen=\dimen204
 \scratchbox=\box46
 \nofMPsegments=\count173
 \nofMParguments=\count174
 \everyMPshowfont=\toks47
 \MPscratchCnt=\count175
-\MPscratchDim=\dimen203
+\MPscratchDim=\dimen205
 \MPnumerator=\count176
 \makeMPintoPDFobject=\count177
 \everyMPtoPDFconversion=\toks48
@@ -1567,7 +1569,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<images/UDG.pdf, id=131, 148.3944pt x 148.3944pt>
+<images/UDG.pdf, id=123, 148.3944pt x 148.3944pt>
 File: images/UDG.pdf Graphic file (type pdf)
  <use images/UDG.pdf>
 Package pdftex.def Info: images/UDG.pdf used on input line 17.
@@ -1670,11 +1672,11 @@ Package minitoc Info: I0033
 
 ] [10
 
-] (./thesis_epal.toc [11])
+] (./thesis_epal.toc)
 \tf@toc=\write6
 \openout6 = `thesis_epal.toc'.
 
- [12] (./thesis_epal.lof)
+ [11] [12] (./thesis_epal.lof)
 \tf@lof=\write7
 \openout7 = `thesis_epal.lof'.
 
@@ -1732,73 +1734,75 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 1.
 )
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 9.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 16.
  [5] <chap3/images/event.png, id=291, 473.77pt x 52.195pt>
 File: chap3/images/event.png Graphic file (type png)
 
 <use chap3/images/event.png>
-Package pdftex.def Info: chap3/images/event.png used on input line 27.
+Package pdftex.def Info: chap3/images/event.png used on input line 30.
 (pdftex.def)             Requested size: 307.94685pt x 33.92635pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4132) has occurred while \output is active []
 
- [6]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<chap3/images/eventType.jpg, id=307, 392.46625pt x 182.6825pt>
+ [6 <./chap3/images/event.png>]
+<chap3/images/eventType.jpg, id=308, 392.46625pt x 182.6825pt>
 File: chap3/images/eventType.jpg Graphic file (type jpg)
 
 <use chap3/images/eventType.jpg>
-Package pdftex.def Info: chap3/images/eventType.jpg used on input line 77.
+Package pdftex.def Info: chap3/images/eventType.jpg used on input line 80.
 (pdftex.def)             Requested size: 196.23264pt x 91.34102pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./chap3/images/event.png>] <chap3/images/op.pdf, id=322, 271.0125pt x 94.3
-525pt>
+ [7]
+
+LaTeX Warning: Reference `ch3:sec2.3.3' on page 8 undefined on input line 92.
+
+<chap3/images/op.pdf, id=321, 271.0125pt x 94.3525pt>
 File: chap3/images/op.pdf Graphic file (type pdf)
 
 <use chap3/images/op.pdf>
-Package pdftex.def Info: chap3/images/op.pdf used on input line 99.
+Package pdftex.def Info: chap3/images/op.pdf used on input line 103.
 (pdftex.def)             Requested size: 176.15602pt x 61.32838pt.
+
+Underfull \vbox (badness 3557) has occurred while \output is active []
+
+ [8 <./chap3/images/eventType.jpg> <./chap3/images/op.pdf>]
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 119.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 119.
+
+<chap3/images/orExample.jpeg, id=368, 446.66875pt x 152.57pt>
+File: chap3/images/orExample.jpeg Graphic file (type jpg)
+
+<use chap3/images/orExample.jpeg>
+Package pdftex.def Info: chap3/images/orExample.jpeg used on input line 126.
+(pdftex.def)             Requested size: 290.33124pt x 99.16931pt.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 133.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 133.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 133.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 133.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 133.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./chap3/images/eventType.jpg>]
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 113.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 113.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 116.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 116.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 116.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 116.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 116.
-
-[9 <./chap3/images/op.pdf>]
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 119.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 119.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 121.
-
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 130
+ [9 <./chap3/images/orExample.jpeg>]
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 136
 .
+
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 )
@@ -1808,80 +1812,104 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             See the microtype manual for details.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 131.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 148.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 133.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 148.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 150.
 
- [10]
+<chap3/images/seqExample.jpeg, id=376, 484.81125pt x 152.57pt>
+File: chap3/images/seqExample.jpeg Graphic file (type jpg)
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 139.
+<use chap3/images/seqExample.jpeg>
+Package pdftex.def Info: chap3/images/seqExample.jpeg used on input line 159.
+(pdftex.def)             Requested size: 315.12357pt x 99.16931pt.
+ [10 <./chap3/images/seqExample.jpeg>]
+<chap3/images/winwithinExample.jpeg, id=381, 477.785pt x 101.37875pt>
+File: chap3/images/winwithinExample.jpeg Graphic file (type jpg)
 
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 139.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 141.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 141.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 141.
-
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 145.
+<use chap3/images/winwithinExample.jpeg>
+Package pdftex.def Info: chap3/images/winwithinExample.jpeg used on input line 
+172.
+(pdftex.def)             Requested size: 310.55656pt x 65.8954pt.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 155.
-
-[11]
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 158.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 180.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 158.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 183.
+
+<chap3/images/winslidingExample.jpeg, id=385, 446.66875pt x 148.555pt>
+File: chap3/images/winslidingExample.jpeg Graphic file (type jpg)
+
+<use chap3/images/winslidingExample.jpeg>
+Package pdftex.def Info: chap3/images/winslidingExample.jpeg used on input line
+ 188.
+(pdftex.def)             Requested size: 290.33124pt x 96.55959pt.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 158.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 160.
+Underfull \vbox (badness 5417) has occurred while \output is active []
+
+ [11 <./chap3/images/winwithinExample.jpeg>]
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 198.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 160.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 198.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 160.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 200.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 164.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 200.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 164.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 200.
 
-<chap3/images/selectionpolicy.pdf, id=382, 294.09875pt x 100.375pt>
-File: chap3/images/selectionpolicy.pdf Graphic file (type pdf)
 
-<use chap3/images/selectionpolicy.pdf>
-Package pdftex.def Info: chap3/images/selectionpolicy.pdf used on input line 17
-7.
-(pdftex.def)             Requested size: 191.16191pt x 65.24297pt.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 204.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[12 <./chap3/images/winslidingExample.jpeg>]
 
- [12]
-<chap3/images/ecg.jpg, id=392, 467.7475pt x 137.51375pt>
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 214.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 217.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 217.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 217.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 219.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 219.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 219.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 223.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 223.
+
+<chap3/images/ecg.jpg, id=395, 467.7475pt x 137.51375pt>
 File: chap3/images/ecg.jpg Graphic file (type jpg)
 
 <use chap3/images/ecg.jpg>
-Package pdftex.def Info: chap3/images/ecg.jpg used on input line 197.
+Package pdftex.def Info: chap3/images/ecg.jpg used on input line 258.
 (pdftex.def)             Requested size: 304.03226pt x 89.38287pt.
- [13 <./chap3/images/selectionpolicy.pdf> <./chap3/images/ecg.jpg>] [14]
-Overfull \hbox (0.68509pt too wide) in paragraph at lines 231--234
+ [13] [14 <./chap3/images/ecg.jpg>]
+Overfull \hbox (0.68509pt too wide) in paragraph at lines 292--295
 \T1/futs/m/n/10.95 (-20) Let us as-sume $\FML/futmi/m/it/10.95 D$ \T1/futs/m/n/
 10.95 (-20) the set of the QoS do-mains that we con-sid-ered, that is $\FML/fut
 mi/m/it/10.95 D \FMS/futm/m/n/10.95 Å \FML/futmi/m/it/10.95 D[] [] D[]$
@@ -1892,29 +1920,40 @@ mi/m/it/10.95 D \FMS/futm/m/n/10.95 Å \FML/futmi/m/it/10.95 D[] [] D[]$
 
  (./chap4/chap4.tex
 Chapter 4.
-) [17
+\openout4 = `thesis_epal.mtc'.
+
+\openout4 = `thesis_epal.mtc'.
+
+(./thesis_epal.mtc8) <chap4/images/epn.pdf, id=419, 541.02126pt x 362.35374pt>
+File: chap4/images/epn.pdf Graphic file (type pdf)
+
+<use chap4/images/epn.pdf>
+Package pdftex.def Info: chap4/images/epn.pdf used on input line 17.
+(pdftex.def)             Requested size: 216.81pt x 145.20985pt.
+ [17
 
 
 
-]
+]) [18 <./chap4/images/epn.pdf>]
 \openout2 = `chap5/chap5.aux'.
 
- (./chap5/chap5.tex)
+
+(./chap5/chap5.tex)
 \openout2 = `French_summary.aux'.
 
- (./French_summary.tex [18
-
-
-
-
-
-]
+ (./French_summary.tex
 Appendix A.
 \openout4 = `thesis_epal.mtc'.
 
 \openout4 = `thesis_epal.mtc'.
 
-(./thesis_epal.mtc9)) [19]
+(./thesis_epal.mtc9)) [19
+
+
+
+
+
+]
 \openout2 = `tail/biblio.aux'.
 
  (./tail/biblio.tex (./thesis_epal.bbl [20
@@ -1959,20 +1998,26 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
 (./French_summary.aux) (./tail/biblio.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
-Package rerunfilecheck Info: File `thesis_epal.out' has not changed.
-(rerunfilecheck)             Checksum: A08B1EC644E1257D99D8B729C0767635;1964.
 
 
-LaTeX Warning: There were multiply-defined labels.
+Package rerunfilecheck Warning: File `thesis_epal.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis_epal.out':
+(rerunfilecheck)             Before: D083A2F034B52F3353A83CBFAF08A225;1875
+(rerunfilecheck)             After:  C5BB50B2D10F4E6E692BE924D5747594;1881.
+
+LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
  ) 
 Here is how much of TeX's memory you used:
- 24154 strings out of 493304
- 399285 string characters out of 6139872
- 635784 words of memory out of 5000000
- 26444 multiletter control sequences out of 15000+600000
- 125893 words of font info for 295 fonts, out of 8000000 for 9000
+ 24204 strings out of 493304
+ 400299 string characters out of 6139872
+ 636737 words of memory out of 5000000
+ 26489 multiletter control sequences out of 15000+600000
+ 125227 words of font info for 289 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  58i,15n,79p,1449b,1219s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
@@ -1986,10 +2031,10 @@ sr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/share/te
 xmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/publ
 ic/cm-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss2074
 .pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on thesis_epal.pdf (38 pages, 369964 bytes).
+Output written on thesis_epal.pdf (38 pages, 440360 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 475 compressed objects within 5 object streams
- 87 named destinations out of 1000 (max. 500000)
- 29987 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 678 PDF objects out of 1000 (max. 8388607)
+ 521 compressed objects within 6 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 29991 words of extra memory for PDF output out of 35830 (max. 10000000)
 

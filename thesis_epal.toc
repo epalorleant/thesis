@@ -7,38 +7,34 @@
 \contentsline {chapter}{List of tables}{xiii}{chapter*.5}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Background and related works}{3}{chapter.2}
-\contentsline {chapter}{\numberline {3}Event Streams Composition Model}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{6}{section.3.1}
-\contentsline {section}{\numberline {3.2}Event, event type, event streams}{6}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Event}{6}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Event type}{7}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Simple event type, complex event type}{7}{subsection.3.2.3}
-\contentsline {subsubsection}{Simple event type}{8}{figure.caption.9}
-\contentsline {subsubsection}{Complex event type}{8}{figure.caption.9}
-\contentsline {subsection}{\numberline {3.2.4}Event streams}{8}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Stream based operators}{9}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Filter}{9}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Logic operators}{9}{subsection.3.3.2}
-\contentsline {subsubsection}{Disjunction}{9}{subsection.3.3.2}
-\contentsline {subsubsection}{Conjunction}{9}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Sequence}{10}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Window operators}{10}{subsection.3.3.4}
-\contentsline {subsubsection}{Time based windows}{10}{subsection.3.3.4}
-\contentsline {subsubsection}{Size bounded windows}{11}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Aggregation operators}{11}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Selection operators}{12}{subsection.3.3.6}
-\contentsline {subsection}{\numberline {3.3.7}Flatten}{12}{subsection.3.3.7}
-\contentsline {section}{\numberline {3.4}Selection policy}{12}{section.3.4}
-\contentsline {section}{\numberline {3.5}Event composition graph}{13}{section.3.5}
-\contentsline {section}{\numberline {3.6}Quality of service}{14}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}QoS dimensions}{14}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}QoS expression}{14}{subsection.3.6.2}
-\contentsline {subsubsection}{Atomic QoS expression}{15}{subsection.3.6.2}
-\contentsline {subsubsection}{Complex QoS expression}{15}{subsection.3.6.2}
-\contentsline {section}{\numberline {3.7}Conclusion}{16}{section.3.7}
-\contentsline {chapter}{\numberline {4}Event Processing Network}{17}{chapter.4}
+\contentsline {chapter}{\numberline {3}An Event Streams Composition Model}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Event, event type, event streams}{6}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Event}{6}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Event type}{7}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Stream based composition operators}{8}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Filter}{9}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Logic operators}{9}{subsection.3.2.2}
+\contentsline {subsubsection}{Disjunction}{9}{subsection.3.2.2}
+\contentsline {subsubsection}{Conjunction}{10}{figure.caption.11}
+\contentsline {subsection}{\numberline {3.2.3}Sequence}{10}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Window operators}{11}{subsection.3.2.4}
+\contentsline {subsubsection}{Time based windows}{11}{subsection.3.2.4}
+\contentsline {subsubsection}{Size bounded windows}{12}{figure.caption.14}
+\contentsline {subsection}{\numberline {3.2.5}Aggregation operators}{12}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Selection operators}{13}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Flatten}{13}{subsection.3.2.7}
+\contentsline {section}{\numberline {3.3}Event composition graph}{13}{section.3.3}
+\contentsline {section}{\numberline {3.4}Quality of service}{14}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}QoS dimensions}{14}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}QoS expression}{15}{subsection.3.4.2}
+\contentsline {subsubsection}{Atomic QoS expression}{15}{subsection.3.4.2}
+\contentsline {subsubsection}{Complex QoS expression}{16}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Conclusion}{16}{section.3.5}
+\contentsline {chapter}{\numberline {4}DESC: A Distributed Event Stream Composition system}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}General architecture / Event processing network}{17}{section.4.1}
+\contentsline {section}{\numberline {4.2}Event producer}{18}{section.4.2}
 \contentsline {chapter}{\numberline {A}French Summary}{19}{appendix.A}
 \select@language {french}
 \contentsline {section}{\numberline {A.1}Introduction}{19}{section.A.1}
 \select@language {english}
-\contentsline {part}{Bibliography}{21}{appendix*.13}
+\contentsline {part}{Bibliography}{21}{appendix*.17}

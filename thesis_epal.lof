@@ -8,14 +8,18 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Background and related works}{3}{chapter.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Event Streams Composition Model}{5}{chapter.3}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Event\relax }}{7}{figure.caption.7}
+\contentsline {xchapter}{An Event Streams Composition Model}{5}{chapter.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Event\relax }}{6}{figure.caption.7}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Classification of event types\relax }}{8}{figure.caption.9}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Operator synopsis\relax }}{9}{figure.caption.10}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example situation where a selection policy should be applied\relax }}{13}{figure.caption.11}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Event composition graph\relax }}{13}{figure.caption.12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Operator synopsis\relax }}{8}{figure.caption.10}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example situation 1. The time associated to events represents the time at which the events are received by the operator.\relax }}{9}{figure.caption.11}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Example situation 2. The time associated to events represents the time at which the events are received by the operator.\relax }}{10}{figure.caption.12}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Example situation 3. The time associated to events represents the time at which the events are received by the operator.\relax }}{11}{figure.caption.13}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Example situation 4. The time associated to events represents the time at which the events are received by the operator.\relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Event composition graph\relax }}{14}{figure.caption.15}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Event Processing Network}{17}{chapter.4}
+\contentsline {xchapter}{DESC: A Distributed Event Stream Composition system}{17}{chapter.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Event processing network\relax }}{18}{figure.caption.16}
 \addvspace {10\p@ }
 \contentsline {xchapter}{French Summary}{19}{appendix.A}
 \select@language {french}

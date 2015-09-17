@@ -1,4 +1,4 @@
-\chapter{Event Streams Composition Model}
+\chapter{An Event Streams Composition Model}
 \label{ch3}
 \textit{This chapter presents the building blocks to model an event composition system. It defines events, which are the entities manipulated by such a system. Then, it introduces event 
 streams and stream based operations. Then it defines how to represent an event composition, with the related QoS dimensions.}
@@ -6,15 +6,18 @@ streams and stream based operations. Then it defines how to represent an event c
 \vspace{2ex}\vfill
 \minitoc
 
-\section{Introduction}
- \label{ch3:intro}
-A vast number of event management models and systems have been, and continues to be proposed. Several standardization efforts are being made to specify how entities can export the structure and data transported by events. Models proposed in the literature range from simple models which describe the notification of signals, to evolved models which take into account various policies to manage and compose events. 
-Existing models have been defined in an ad hoc way, notably linked to the application context (active DBMS event models), or in a very general way in middleware (Java event service, MOMs). Of course, customizing solutions prevents systems to be affected with the overhead of an event model way too sophisticated for their needs. However, they are not adapted when the systems evolve, cooperate and scale, leading to a lack of adaptability and flexibility. 
-This chapter introduces the concepts of event, event type and event streams. It introduces stream based operations and presents how to define an event composition expression. It ends with the specification of QoS related to an event composition expression.  
+%\section{Introduction}
+ %\label{ch3:intro}
+% A vast number of event management models and systems have been, and continues to be proposed. Several standardization efforts are being made to specify how entities can export the structure and data transported by events. Models proposed in the literature range from simple models which describe the notification of signals, to evolved models which take into account various policies to manage and compose events. 
+% Existing models have been defined in an ad hoc way, notably linked to the application context (active DBMS event models), or in a very general way in middleware (Java event service, MOMs). Of course, customizing solutions prevents systems to be affected with the overhead of an event model way too sophisticated for their needs. However, they are not adapted when the systems evolve, cooperate and scale, leading to a lack of adaptability and flexibility. 
+% This chapter introduces the concepts of event, event type and event streams. It introduces stream based operations and presents how to define an event composition expression. It ends with the specification of QoS related to an event composition expression.  
 %It introduces the notion of priority that can be associated to events in some particular contexts.
 
 \section{Event, event type, event streams}
 \label{ch3:sec2}
+A vast number of event management models and systems have been, and continues to be proposed. Several standardization efforts are being made to specify how entities can export the structure and data transported by events. Models proposed in the literature range from simple models which describe the notification of signals, to evolved models which take into account various policies to manage and compose events. 
+Existing models have been defined in an ad hoc way, notably linked to the application context (active DBMS event models), or in a very general way in middleware (Java event service, MOMs). Of course, customizing solutions prevents systems to be affected with the overhead of an event model way too sophisticated for their needs. However, they are not adapted when the systems evolve, cooperate and scale, leading to a lack of adaptability and flexibility. 
+%This chapter introduces the concepts of event, event type and event streams. It introduces stream based operations and presents how to define an event composition expression. It ends with the specification of QoS related to an event composition expression.
 
  \subsection{Event}
  An event is something that happens at a particular place and time and that is particularly significant, interesting or unusual. In computing systems the notion of event has a major importance since it provides a powerful abstraction to model dynamic aspects of applications. For instance, events can represent state changes in databases; signals in message systems; changes of existing objects or the creation of new objects in object-oriented systems; or “real-world” events such as the departure or arrival of vehicles. In event-driven programming an event is a message that indicates a situation that happened, such as a keystroke or a mouse click. In process control an event is an occurrence that happened and that has been registered.  Examples are a purchase order, an email confirmation of an airline reservation, a stock tick message that reports a stock trade.
@@ -35,7 +38,7 @@ In this document we define an event in terms of a source named producer in which
  An event type is an expression that characterizes a class of significant facts (events) and the context under which they occur. Facts of the same nature are denoted by events that have the same type. Event types are characterized by an event model. An event model gives concepts and general structures used to represent event types.
 
 According to the complexity of the event model, the event types are represented as sequences of strings \cite{Yuhara1994}, regular expressions \cite{Bailey1994} or as expressions of an event algebra \cite{Chakravarthy1994, Gatziu1994, Collet96}. Other models represent an event type as a collection of parameters or attributes, allowing the type itself to contains implicitly the content of the message. This model is useful when we need to reason about events content. For example, \textit{MeterAlarm(idMeter:string, voltage:real, current:real)} is an event type that represents a smart meter reading, where the current and voltage values observed are represented by attributes \textit{voltage} and \textit{current}.\\
-Event composition, or specifically event streams composition supports the idea of performing operations on events. Some of those operations needs to access the events content (see Section \ref{ch3:sec2.3.3}). 
+Event composition, or specifically event streams composition supports the idea of performing operations on events. Some of those operations needs to access the events content (see Section \ref{ch3:sec2}). 
 %The set of operations applicable to events depends on the capacity of the underlying event model to expose the content of events. Event models that expose events content yield to more expressive event composition. 
 For that reason, we represent an event type as a collection of attributes:\\
 $EventType E:= Set <Attribute>. \\
@@ -70,7 +73,7 @@ context & Set<Attribute>
 \end{table}
  An event instance (or simply event) is an occurrence of an event type.
  
- \subsection{Simple event type, complex event type}
+% \subsection{Simple event type, complex event type}
 Event types can be classified as simple event types that describe elementary facts, and complex event types that describe complex situations by event combinations (see Figure \ref{fig:eventtype}). 
 \begin{figure}[H]
   \begin{center}
@@ -81,18 +84,19 @@ Event types can be classified as simple event types that describe elementary fac
   \label{fig:eventtype}
 \end{figure}
 
-\subsubsection{Simple event type}
+%\subsubsection{Simple event type}
 Event producers produce instances of a simple event type. Simple event instances are not generated as a result of processing others events.
 
-\subsubsection{Complex event type}
-\label{ch3:sec2.3.2}
+%\subsubsection{Complex event type}
+%\label{ch3:sec2.3.2}
 Complex event types represent situations (relevant or critical) that can be inferred from the occurrences of others events. Complex events are produced by processing other events. Event processing operators are defined in Section \ref{ch3:sec2.3.3}.
-
-\subsection{Event streams}
- An event stream is a continuous, append-only sequence of events. We note $Stream(s, T)$ the stream of events of type T generated by the source s. If S is a set of sources, then $\{\bigcup  stream(s,T), s \in S\}$ defines a stream of events of type T, denoted $Stream(T)$.
  
- \section{Stream based operators}
- \label{ch3:sec2.3.3}
+ \section{Stream based composition operators}
+ \label{ch3:sec3}
+ %\subsection{Event streams}
+ An event stream is a continuous, append-only sequence of events. We note $Stream(s, T)$ the stream of events of type T generated by the source s. If S is a set of sources, then $\{\bigcup  stream(s,T), s \in S\}$ defines a stream of events of type T, denoted $Stream(T)$.
+
+ 
  Complex events are produced by composing event streams. Event stream composition operators specify the types of operations that can be performed on event streams. An event stream composition operator $op$ takes one or many input event streams of a given type, and produces an output stream of a given type (see Figure \ref{fig:op}).
  \begin{figure}[H]
   \begin{center}
@@ -104,34 +108,89 @@ Complex event types represent situations (relevant or critical) that can be infe
 \end{figure}
 Event stream composition operators considered here are : filter, logic operators, sequence, window operators, aggregation operators, selection operator and flatten.  
   \subsection{Filter}
-  The \textit{filter} operator is denoted $filter (ES_i, P)$. It receives one input stream $ES_i$ and a predicate $P$. The filter operator produces an event $e$ in the output event stream each time an event $e_i$ in the input stream satisfies the predicate $P$, that is if $P(e_i)= true$. The context of the output event $e$ is the same as the context of the input occurrence $e_i$.
+  The \textit{filter} operator selects events in an input stream that satisfy a given predicate. The \textit{filter} operator is denoted $filter (ES_i, P)$. It receives one input stream $ES_i$ and a predicate $P$. The filter operator produces an event $e$ in the output event stream each time an event $e_i$ in the input stream satisfies the predicate $P$, that is if $P(e_i)= true$. The context of the output event $e$ is the same as the context of the input occurrence $e_i$.
   That is, $e.context = e_i.context$.
+  \\ For example, let's consider the event type $MeterMeasure<meterID:string, realPower:double>$ and some event instances of type MeterMeasure, $e_1=<``meter1``, 7>, e_2=<``meter1``, 5>, e_3=<``meter1``, 4>, e_4=<``meter1``, 6>$. Let's also consider the event stream $ES=Stream(MeterMeasure)= \{e_1, e_2, e_3, e_4, ... \}$. 
+  \\Then, $filter(ES, realPower > 5)= \{e_1, e_4, ... \}$. Events $e_2$ and $e_3$ have been filtered out by the filter operator since they don't not satisfy the predicate ``realPower > 5``.
  \subsection{Logic operators}
  Logic operators produce an event stream based on the occurrence of events in input streams. They are used to test specific pattern of occurences of event types.
  
  \subsubsection{Disjunction}
- The disjunction operator is denoted $OR(ES_1, ES_2, …, ES_n)$. It produces events in the output stream at the occurrence of events in any of the input streams $ES_i, i \in \{1, 2, …,n\}$. An event $e$ is produced in the output stream if an instance $e_i$, of any input stream $ES_i$ occurs. The context of the complex event $e$ contains all occurrences $e_i$ that occur.
- 
-  \subsubsection{Conjunction}
-  The conjunction operator is  denoted $AND(ES_1, ES_2, …, ES_n)$. It produces events in the output stream at the occurrence of events in all of the input streams $ES_i, i \in \{1, 2, …,n\}$. An event $e$ is produced in the output stream if events $e_1, e_2, …, e_n$ occur respectively in input streams $ES_1, ES_2, …, ES_n$, regardless their occurrence order. The context of the complex event $e$ contains all events $e_1, e_2, …, e_n$.
- 
+ The disjunction operator merges the input streams into one output stream. The disjunction operator is denoted $OR(ES_1, ES_2, …, ES_n)$. It produces events in the output stream at the occurrence of events in any of the input streams $ES_i, i \in \{1, 2, …,n\}$. An event $e$ is produced in the output stream if an instance $e_i$, of any input stream $ES_i$ occurs. The context of the complex event $e$ contains all occurrences $e_i$ that occur. 
+For example, let's consider the event streams $ES_1$ and $ES_2$ in Figure \ref{fig:op_or_exple}.
+%types \textit{MeterMeasure} and \textit{MeterAlarm} denoting respectively a measure and an alarm generated by a smart meter. 
+%\\Let's consider $ES_1 = Stream(MeterMeasure)$ and $ES_2 = Stream(MeterAlarm)$. Then, $OR(ES_1, ES_2)$  denotes the event stream containing measure and alarm events.
+In this example, the output of $OR(ES_1, ES_2)$ is the sequence $\{e_{1,1}, e_{2,1}, e_{2,2}, e_{1,2}, ...\}$.
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.65]{chap3/images/orExample.jpeg}
+    % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
+  \end{center}
+  \caption{Example situation 1. The time associated to events represents the time at which the events are received by the operator.}
+  \label{fig:op_or_exple}
+\end{figure}
+\subsubsection{Conjunction}
+  The conjunction operator is used to ensure that an event occured in all input streams. The conjunction operator is  denoted $AND(ES_1, ES_2, …, ES_n)$. It produces events in the output stream at the occurrence of events in all of the input streams $ES_i, i \in \{1, 2, …,n\}$. An event $e$ is produced in the output stream if events $e_1, e_2, …, e_n$ occur respectively in input streams $ES_1, ES_2, …, ES_n$, regardless their occurrence order. The context of the complex event $e$ contains all events $e_1, e_2, …, e_n$.
+ For example, by considering again the event streams $ES_1$ and $ES_2$ in Figure \ref{fig:op_or_exple}, the output of $AND(ES_1, ES_2)$ will be:
+ \begin{itemize}
+  \item A complex event $ec_1$ at time t2 with the event parameters $e_{1,1}$ and $e_{2,1}$
+  \item A complex event $ec_2$ at time t4 with the event parameters $e_{2,2}$ and $e_{1,2}$.
+ \end{itemize}
+%  \begin{figure}[h]
+%   \begin{center}
+%     \includegraphics[scale=0.65]{chap3/images/andExample.jpeg}
+%     % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
+%   \end{center}
+%   \caption{Example situation 2}
+%   \label{fig:op_and_exple}
+% \end{figure}
  \subsection{Sequence}
- The sequence operator is denoted $SEQ(ES_1, ES_2, …, ES_n)$. It receives two or more input event streams $ES_1, ES_2, … ES_n$. The sequence operator produces a complex event $e$ in output stream each time instances $e1$ in $ES_1$, $e_2$ in $ES_2$,…, $e_n$ in $ES_n$ are received in the specified order. 
+ The sequence operator captures precedence order of events in input streams. The sequence operator is denoted $SEQ(ES_1, ES_2, …, ES_n)$, and receives two or more input event streams $ES_1, ES_2, … ES_n$. The sequence operator produces a complex event $e$ in output stream each time instances $e1$ in $ES_1$, $e_2$ in $ES_2$,…, $e_n$ in $ES_n$ are received in the specified order. 
  Then, sequence denotes that $\forall i$, occurrence $e_i$ “is received before” occurrence $e_{i+1}$. 
  This implies that the reception time of event $e_1.receptionTime < e_2.receptionTime < …< e_n.receptionTime$.
  The context of the complex ec contains all events $e_1$ and $e_2$, …, $e_n$. 
- 
+ For example, let's consider the event streams $ES_1$ and $ES_2$ in Figure \ref{fig:op_seq_exple}, the output of $SEQ(ES_1, ES_2)$ will be:
+ \begin{itemize}
+  \item A complex event $ec_1$ at time t2 with the event parameters $e_{1,1}$ and $e_{2,1}$
+  \item A complex event $ec_2$ at time t5 with the event parameters $e_{1,2}$ and $e_{2,3}$.
+ \end{itemize}
+ \begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.65]{chap3/images/seqExample.jpeg}
+    % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
+  \end{center}
+  \caption{Example situation 2. The time associated to events represents the time at which the events are received by the operator.}
+  \label{fig:op_seq_exple}
+\end{figure}
  \subsection{Window operators}
  Window operators partition an event stream into finite parts of the original event stream. Let's consider an input stream $Stream(E)$. We denote by $Stream_f(E)$, a finite part of $Stream(E)$. A window operator applied on $Stream(E)$ results in a stream of finite streams, which we denote $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$.
  The way each finite stream is constructed depends on the window specification, which can be \textit{time-based} or \textit{tuple-based}.
  \subsubsection{Time based windows}
-Time based windows define windows using time intervals. 
+Time based windows define windows using time intervals.
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.65]{chap3/images/winwithinExample.jpeg}
+    % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
+  \end{center}
+  \caption{Example situation 3. The time associated to events represents the time at which the events are received by the operator.}
+  \label{fig:op_winwithin_exple}
+\end{figure}
 \begin{itemize} 
-\item \textbf{Fixed windows}: $win:within(t_b, t_e, ES)$. Defines a fixed time interval $[t_b, t_e]$. The output stream contains a single finite event stream $ES_{f,1}$ such that $\forall e \in ES, e \in ES_{f,1}$ iff $t_b \leq e_i.receptionTime \leq t_e $. 
+\item \textbf{Fixed windows}: $win:within(t_b, t_e, ES)$. Defines a fixed time interval $[t_b, t_e]$. The output stream contains a single finite event stream $ES_{f,1}$ such that $\forall e \in ES, e \in ES_{f,1}$ iff $t_b \leq e_i.receptionTime \leq t_e $. In the example depicted in Figure \ref{fig:op_winwithin_exple}, the output of $win:within(t_b, t_e, ES)$ is the finite event stream $\{e_2, e_3\}$ 
 \item \textbf{Landmark windows}: $win:since(t_b, ES)$. Defines a fixed lower bound time $tb$. The output stream is a sequence of finite event streams $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each $ES_{f,i}$ contains events $e_i$ received since the time lower bound $t_b$. That is, $\forall i, e \in ES_{f,i}$ iff $t_b \leq e_i.receptionTime$.
+In the example depicted in Figure \ref{fig:op_winwithin_exple}, the output of $win:since(t_b, ES)$ is the finite event stream $\{e_2, e_3, e_4\}$ 
 \item \textbf{Sliding windows}: $win:sliding(t_w, t_s, ES)$. Defines a time duration $t_w$ and a time span $t_s$. The output stream
 is a sequence of finite event streams  $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each $ES_{f,i}$ contains events from stream $ES$ produced 
-during last $t_w$ time units. The finite event streams in the sequence are produced each $t_s$ time unit. That is, if $ES_{f,i}$ is produced at time t, then $ES_{f,i+1}$ will be produced at time $t+t_s$. 
+during last $t_w$ time units. The finite event streams in the sequence are produced each $t_s$ time unit. That is, if $ES_{f,i}$ is produced at time t, then $ES_{f,i+1}$ will be produced at time $t+t_s$.
+In the example depicted in Figure \ref{fig:op_winsliding_exple}, the output of $win:sliding(t_w, t_s, ES)$ are the finite event streams $\{e_1, e_2\}$ and $\{e_4\}$.
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.65]{chap3/images/winslidingExample.jpeg}
+    % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
+  \end{center}
+  \caption{Example situation 4. The time associated to events represents the time at which the events are received by the operator.}
+  \label{fig:op_winsliding_exple}
+\end{figure}
 \end{itemize}
 \subsubsection{Size bounded windows}
 A size bounded window defines the number of events for each window. We distinguish between size fixed windows and sliding size fixed windows.
@@ -163,34 +222,36 @@ For each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, selects the last even
  Flatten operator takes as input a stream of finite event streams $\{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$  and produce as output a stream of events constructed by concatenating events in $ES_{f,1}, ES_{f,2}, ES_{f,3}$, and so on. 
 For example, if we consider the stream of finite streams $\{\{e_1\}, \{e_2, e_3\}, \{e_4, e_5, e_6\}, …\}$, the flatten operator produces the output stream $\{e_1, e, e_2, e_3,e, e_4, e_5, e_6, e, …\}$ where $e$ is a special “empty” event that indicates the end of each finite stream in the output stream.
 
-\section{Selection policy}
-\label{ch3:sec4}
+%\section{Selection policy}
+%\label{ch3:sec4}
 % In general, stream based operators process selects one or more input event streams and produce as output one event stream.
 % In some cases, an operator can receive many instances of input events can be of events 
 % The production of one event in the output stream 
 % In general, stream-based operators select some events in input str
-% perfom event per event, as event are arriving on input event streams. This is the case for the filter operator, the For example, In some cases,  
-There are ambiguous situations where an operator has to select between many event instances in input streams in order to produce a complex event. For example, consider the situation depicted in Figure \ref{fig:selectionpolicy} where the \textit{and} operator is performed on two event streams A and B. Suppose that two event occurrences $a_1$ and $a_2$ are received from input stream A at time $t_1$ and $t_2 > t_1$ respectively. According to the operator definition, a complex event has to be produced in the output stream when occurrences from input streams A and B are received. So, at time $t_2$, there is nothing produced in the output. Now let's suppose that an occurrence $b_1$ is received from input stream B at time $t_3 > t_2$. Now, the \textit{and} operator should produce a composite event in the output. For that, it must be specified which occurrence between $a_1$ and $a_2$ should be considered for the construction of the complex event. It is the goal of selection policies, to specify the events to be selected in such situations. The event selection policies are classified in recent, chronologic,  continuous and cumulative.
+% perfom event per event, as event are arriving on input event streams. This is the case for the filter operator, the For example, In some cases,
+% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+%There are ambiguous situations where an operator has to select between many event in input streams in order to produce a complex event. For example, consider the situation depicted in Figure \ref{fig:selectionpolicy} where the \textit{and} operator is performed on two event streams A and B. Suppose that two event occurrences $a_1$ and $a_2$ are received from input stream A at time $t_1$ and $t_2 > t_1$ respectively. According to the operator definition, a complex event has to be produced in the output stream when occurrences from input streams A and B are received. So, at time $t_2$, there is nothing produced in the output. Now let's suppose that an occurrence $b_1$ is received from input stream B at time $t_3 > t_2$. Now, the \textit{and} operator should produce a composite event in the output. For that, it must be specified which occurrence between $a_1$ and $a_2$ should be considered for the construction of the complex event. It is the goal of selection policies, to specify the events to be selected in such situations. The event selection policies are classified in recent, chronologic,  continuous and cumulative.
 
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[scale=0.65]{chap3/images/selectionpolicy.pdf}
-    % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
-  \end{center}
-  \caption{Example situation where a selection policy should be applied}
-  \label{fig:selectionpolicy}
-\end{figure}
-\begin{description}
-  \item[Recent]  Only the newest event occurence is selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_2$ is selected between $a_1$ and $a_2$.
-  \item[Chronologic]  Only the oldest event occurence is selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_1$ is selected between $a_1$ and $a_2$.
-  \item[Continuous] All the event occurences are selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_1$ and $a_2$ are selected. As result, two complex events are produced in the output stream, with event parameters \{$a_1$, $b_1$\} and \{$a_1$, $b_2$\} respectively.
-  \item[Cumulative]  All the event occurrences are accumulate in order to produce the complex event. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $b_1$ is combined with both events $a_1$ and $a_2$.
-\end{description}
+%\begin{figure}[H]
+ % \begin{center}
+  %  \includegraphics[scale=0.65]{chap3/images/selectionpolicy.pdf}
+    %% event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
+  %\end{center}
+  %\caption{Example situation where a selection policy should be applied}
+  %\label{fig:selectionpolicy}
+%\end{figure}
+%\begin{description}
+ % \item[Recent]  Only the newest event occurence is selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_2$ is selected between $a_1$ and $a_2$.
+ % \item[Chronologic]  Only the oldest event occurence is selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_1$ is selected between $a_1$ and $a_2$.
+ % \item[Continuous] All the event occurences are selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_1$ and $a_2$ are selected. As result, two complex events are produced in the output stream, with event parameters \{$a_1$, $b_1$\} and \{$a_1$, $b_2$\} respectively.
+ % \item[Cumulative]  All the event occurrences are accumulate in order to produce the complex event. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $b_1$ is combined with both events $a_1$ and $a_2$.
+% \end{description}
 
  \section{Event composition graph}
  \label{ch3:sec5}
+ Complex events are defined by consumers in order to state the situations they are interested in. Those situations can be described in terms of operations that have to be applied to event streams in order to obtain the desired result.   
  %As mentionned is Section \ref{ch3:sec2.3.2}, complex events are produced by processing event streams.
- A complex event is specified as an \textit{event composition graph} (see Figure \ref{fig:ecg}). An event composition graph identifies the event streams to be processed with the operation chain to be performed on them. In a more formal way, an event composition graph is a direct acyclic graph (DAG) $G=<\mathcal{N}, \mathcal{S}>$, where $\mathcal{N}= \{P \cup O\}$ consists in a set of terminal nodes $P$ and a set of non-terminal nodes $O$, and a set of edges $\mathcal{S}$. Terminal nodes $P$ represent input stream producers and non-terminal nodes $O$ represent stream based operators. The edges $\mathcal{S}$ represent event streams. From an end user point of view, an event composition graph can be specified using either a graphical user interface, or programmaticaly. 
+ A complex event is represented as an \textit{event composition graph} (see Figure \ref{fig:ecg}). An event composition graph is a structure that identifies the event streams to be processed with the operation chain to be performed on them. In a more formal way, an event composition graph is a direct acyclic graph (DAG) $G=<\mathcal{N}, \mathcal{S}>$, where $\mathcal{N}= \{P \cup O\}$ consists in a set of terminal nodes $P$ and a set of non-terminal nodes $O$, and a set of edges $\mathcal{S}$. Terminal nodes $P$ represent input stream producers and non-terminal nodes $O$ represent stream based operators. The edges $\mathcal{S}$ represent event streams. From an end user point of view, an event composition graph can be specified using either a graphical user interface, or programmaticaly. 
  %We  In this thesis, we only consider their internal representation as DAGs.% with less focus on how such DAG can be defined from an end user point of view.   
  \begin{figure}[H]
   \begin{center}

@@ -8,10 +8,10 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Background and related works}{3}{chapter.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Event Streams Composition Model}{5}{chapter.3}
-\contentsline {table}{\numberline {3.1}{\ignorespaces Event types attributes\relax }}{8}{table.caption.8}
+\contentsline {xchapter}{An Event Streams Composition Model}{5}{chapter.3}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Event types attributes\relax }}{7}{table.caption.8}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Event Processing Network}{17}{chapter.4}
+\contentsline {xchapter}{DESC: A Distributed Event Stream Composition system}{17}{chapter.4}
 \addvspace {10\p@ }
 \contentsline {xchapter}{French Summary}{19}{appendix.A}
 \select@language {french}
