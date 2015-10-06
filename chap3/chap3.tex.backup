@@ -18,34 +18,61 @@ streams and stream based operations. Then it defines how to represent an event c
 A vast number of event management models and systems have been, and continues to be proposed. Several standardization efforts are being made to specify how entities can export the structure and data transported by events. Models proposed in the literature range from simple models which describe the notification of signals, to evolved models which take into account various policies to manage and compose events. 
 Existing models have been defined in an ad hoc way, notably linked to the application context (active DBMS event models), or in a very general way in middleware (Java event service, MOMs). Of course, customizing solutions prevents systems to be affected with the overhead of an event model way too sophisticated for their needs. However, they are not adapted when the systems evolve, cooperate and scale, leading to a lack of adaptability and flexibility. 
 %This chapter introduces the concepts of event, event type and event streams. It introduces stream based operations and presents how to define an event composition expression. It ends with the specification of QoS related to an event composition expression.
+ \subsection{Definitions}
+ \subsubsection{Preamble}
+Let's assume a finite set of \textit{domains}, each consisting of a possibly infinite set of values. In particular, we consider the domain $\mathbb{S}$ of strings, $\mathbb{B}$ of booleans ($\{true, false\}$), $\mathbb{Z}$ of integers, and $\mathbb{R}$ of real numbers. We also consider a domain $\mathbb{T}$ defined by the set $\mathbb{N} \bigcup \{0\}$, i.e. the set of natural numbers plus zero, which characterizes time values. These can be represented alternatively as \textit{string, boolean, integer, real} and \textit{time} respectively. In addition, we assume a set   $\mathbb{A} = \{A_1,\ A_2,\ ...\}\ \subseteq\ \mathbb{S}$ of type names. 
+\subsubsection{Complex value types}
+Complex value types are represented by lower-case letters with hats (e.g. \^{t}) and are defined by a pair $A : def$, where $A$ is the name of the type and $def$ its definition. In order to enable access to both components we assume the functions \textit{name} and \textit{def}, which given a type will return the respective component of the type. For instance, for the type \textit{Power : real, name(Power : real) = Power} whereas \textit{def(Power : real) = real}.
+The set of all complex value types $\mathcal{T}$ is defined inductively as follows.
+\begin{enumerate}
+ \item if $D$ is a domain, then $A\ :\ D$ is an atomic type named $A$, where $A \in \mathbb{A}$;
+ \item if \^{t} is a type, then $A\ :\ \{\hat{t}\}$ is a set type named $A$;
+ \item if $\hat{t_1}, ..., \hat{t_n}$ are types with distinct names, then $A\ :\ \langle\hat{t_1}, ..., \hat{t_n}\rangle$ is a tuple type named A, and each $\hat{t_i}$ is an attribute type;
+ \item if $\hat{t_1}$ and  $\hat{t_2}$ are types with distinct names, then $A\ :\ \hat{t_1} \oplus \hat{t_2}$ is the alternative type.  
+\end{enumerate}
+Every type $\hat{t} \ \in \ \mathcal{T} $  denotes a set of complex value instances $\llbracket \hat{t} \rrbracket$ which is defined inductively as follows.
+\begin{enumerate}
+ \item For each atomic type $A\ :\ D$, $\llbracket A\ :\ D\rrbracket = \{d\ |\ d \in D\}$, where we assume the values of the domain $D$ given;
+ \item for set types of the form $A\ :\ \{\hat{t}\}$, $\llbracket A\ :\ \{\hat{t}\}\rrbracket$ = $\{S\ |\ S\in\  \mathcal{P}(\llbracket \hat{t}\rrbracket)\}$, where $\mathcal{P}$ denotes the power set;
+ \item for tuple types of the form $A\ :\ \langle  \hat{t_1}, ..., \hat{t_n}\rangle$, $\llbracket A\ : \ \langle  \hat{t_1}, ..., \hat{t_n}\rangle \rrbracket$ = $\{\langle v_1, ..., v_n\rangle \ | \ :\ v_i \in \llbracket \hat{t_i}\rrbracket \ \bigwedge \ i \ \in \ [1..n]\}$;
+ \item for alternative type of the form $A\ :\ \hat{t_1} \oplus \hat{t_2}$, $\llbracket A\ :\   \hat{t_1} \oplus \hat{t_2} \rrbracket$ = $\{v\ |\ v \in \llbracket \hat{t_1}\rrbracket\ \bigvee\ v \in \llbracket \hat{t_2}\rrbracket\}$
+\end{enumerate}
+\subsubsection{Access to components of complex value instances}
+We note $t\ \equiv\ \hat{t}$, to define an instance of a complex value type $\hat{t}$ named $t$. 
+We define the function \textit{val} to obtain the value $v$ associated to an instance $t$. In addition, for tuple values $t$ of the type $A\ :\ \langle  \hat{t_1}, ..., \hat{t_n}\rangle$ such that $name(\hat{t_i})\ =\ A_i$, we adopt the dot notation $t.A_i$ to access the instance of the attribute type $\hat{t_i}$ of $t$. In particular, if we have $t = \langle v_1, ..., v_n\rangle$, then $\forall i \ \in \ [1..n],\ v_i\ =\ val(t.A_i)$.  
+For example, $t\ \equiv Account\ :\ \langle id: string,\ balance: real\rangle$ denotes an instance $t$ of the tuple type $Account\ :\ \langle id: string,\ balance: real\rangle$. In addition, if $t = \langle B14,\ 500\rangle$ then, $val(t.id) = B14$ and $val(t.balance) = 500$.
 
+For simplicity, we also adopt the notation $t$, to refer to the value $val(t)$ of an instance $t$. The difference between the value of the instance and the instance itself depends on the context.
+For example, for the tuple instance $t= \langle B14,\ 500\rangle$ of the type $Account\ :\ \langle id: string,\ balance: real\rangle$, we have $t.id = B14$ and $t.balance = 500$.
  \subsection{Event}
  An event is something that happens at a particular place and time and that is particularly significant, interesting or unusual. In computing systems the notion of event has a major importance since it provides a powerful abstraction to model dynamic aspects of applications. For instance, events can represent state changes in databases; signals in message systems; changes of existing objects or the creation of new objects in object-oriented systems; or “real-world” events such as the departure or arrival of vehicles. In event-driven programming an event is a message that indicates a situation that happened, such as a keystroke or a mouse click. In process control an event is an occurrence that happened and that has been registered.  Examples are a purchase order, an email confirmation of an airline reservation, a stock tick message that reports a stock trade.
  
  The literature proposes different definitions of an event. For example, in \cite{Mansouri97gem} an event is a happening of interest, which occurs instantaneously at a specific time. Another definition given by \cite{Rosenblum97} characterizes an event as the instantaneous effect of the termination of an invocation of an operation on an object. According to the first definition, an event exists because some entity is interested in it; the second one defines events independently of any interested party. The second definition also subsumes an object model while the first one is neutral with respect to the model adopted for entities. 
-
-In this document we define an event in terms of a source named producer in which the event occurs, and a consumer for which the event is significant (figure 2.1). Thus, an event describes a fact, a situation, observable in a producer and significant for a consumer.
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[scale=0.65]{chap3/images/event.png}
-    % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
-  \end{center}
-  \caption{Event}
-  \label{fig:event}
-\end{figure}
+% 
+% In this document we define an event in terms of a source named producer in which the event occurs, and a consumer for which the event is significant (figure 2.1). Thus, an event describes a fact, a situation, observable in a producer and significant for a consumer.
+% \begin{figure}[H]
+%   \begin{center}
+%     \includegraphics[scale=0.65]{chap3/images/event.png}
+%     % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
+%   \end{center}
+%   \caption{Event}
+%   \label{fig:event}
+% \end{figure}
  %An event is a notification that a happening of interest has occurred \cite{glossary}. Examples are a purchase order, an email confirmation of an airline reservation, a stock tick message that reports a stock trade, a message that reports a sensor reading or a smart meter alarm. 
+ 
  \subsection{Event type}
- An event type is an expression that characterizes a class of significant facts (events) and the context under which they occur. Facts of the same nature are denoted by events that have the same type. Event types are characterized by an event model. An event model gives concepts and general structures used to represent event types.
-
-According to the complexity of the event model, the event types are represented as sequences of strings \cite{Yuhara1994}, regular expressions \cite{Bailey1994} or as expressions of an event algebra \cite{Chakravarthy1994, Gatziu1994, Collet96}. Other models represent an event type as a collection of parameters or attributes, allowing the type itself to contains implicitly the content of the message. This model is useful when we need to reason about events content. For example, \textit{MeterAlarm(idMeter:string, voltage:real, current:real)} is an event type that represents a smart meter reading, where the current and voltage values observed are represented by attributes \textit{voltage} and \textit{current}.\\
+ An event type is an expression that characterizes a class of significant facts (events) and the context under which they occur. Facts of the same nature are denoted by events that have the same type. 
+ %Event types are characterized by an event model.
+ An event model gives concepts and general structures used to represent event types.  
+ 
+According to the complexity of the event model, the event types are represented as sequences of strings \cite{Yuhara1994}, regular expressions \cite{Bailey1994} or as expressions of an event algebra \cite{Chakravarthy1994, Gatziu1994, Collet96}. Other models represent an event type as a collection of parameters or attributes, allowing the type itself to contains implicitly the content of the message. This model is useful when we need to reason about events content. For example, $MeterAlarm\ :\ \langle idMeter:string, voltage:real, current:real \rangle$ is an event type that represents a smart meter reading, where the current and voltage values observed are represented by attributes named \textit{voltage} and \textit{current}.\\
 Event composition, or specifically event streams composition supports the idea of performing operations on events. Some of those operations needs to access the events content (see Section \ref{ch3:sec2}). 
 %The set of operations applicable to events depends on the capacity of the underlying event model to expose the content of events. Event models that expose events content yield to more expressive event composition. 
-For that reason, we represent an event type as a collection of attributes:\\
-$EventType E:= Set <Attribute>. \\
-Attribute:= <Name, Value>.
-$
+For that reason, we represent an event type as a tuple type:\\
+$EventType : \langle A_1 : D_1, ..., A_n : D_n\rangle.$ \\
+The definition of an event type includes the attributes presented in Table \ref{tab:evtAttributes}. The \textit{producerID} attribute refers to the id of the entity that produced the event occurence. The \textit{detectionTime} attribute refers to the time at which the event occurence has been detected by a source. The \textit{productionTime} attribute refers to the time at which the event has been produced (as a result of processings on others events) by an event-processing unit. The \textit{notificationTime} attribute refers to the time at which the event is notified to interested consumers. The \textit{receptionTime} attribute refers to the time at which an interested consumer receives the event. In addition to those attributes that are common to all event types, each event type includes other attributes that capture the data that are particular to this event type. For example, a \textit{MeterAlarm} event type is defined as $MeterAlarm\ :\ \langle$\textit{producerID : string,\ detectionTime : time,\ productionTime : time,\ notificationTime : time, receptionTime : time, voltage : real, current : real}$\rangle$.
+\\In addition to attributes presented in Table \ref{tab:evtAttributes}, the \textit{MeterAlarm} event type includes the attributes  \textit{idMeter:string, voltage:real, current:real} that represents data that are specific to the MeterAlarm event type. In the rest of this document, we will refer to the attributes presented in Table \ref{tab:evtAttributes} as \textit{header attributes}. For writing simplicity, we will sometimes omit the header attributes in the description of event types and occurences, when they are not relevant for the topic under consideration. For example, the $MeterAlarm$ event type previously defined can be simply defined as $MeterAlarm\ :\ \langle voltage: real,\ current: real\rangle$.  
 
-Our definition of an event type includes the attributes presented in Table \ref{tab:evtAttributes}. The \textit{typeName} attribute refers to the name of the event type. The \textit{producerID} attribute refers to the id of the entity that produced the event occurence. The \textit{detectionTime} attribute refers to the time at which the event occurence has been detected by a source. The \textit{productionTime} attribute refers to the time at which the event has been produced (as a result of processings on others events) by an event-processing unit. The \textit{notificationTime} attribute refers to the time at which the event is notified to interested consumers. The \textit{receptionTime} attribute refers to the time at which an interested consumer receives the event. The context (\textit{context} attribute) of an event type defines all the attributes that are particular to this event type. They represent the others data manipulated by the producer, which are relevant to this event type.
 \definecolor{tcB}{rgb}{1,1,1}
 \definecolor{tcA}{rgb}{0,0,0}
 \begin{table}[h!]
@@ -53,51 +80,55 @@ Our definition of an event type includes the attributes presented in Table \ref{
 \begin{tabular}{ll}
 % use packages: color,colortbl
 \rowcolor{tcA}
-\textbf{\textcolor{tcB}{Name}} & \textbf{\textcolor{tcB}{Type}}\\
+\textbf{\textcolor{tcB}{Name}} & \textbf{\textcolor{tcB}{Domain}}\\
 %\rowcolor{tcA}
-typeName & String\\
+%typeName & String\\
 %\rowcolor{tcA}
-producerID & String\\
+producerID & string\\
 %\rowcolor{tcA}
-detectionTime & Number\\
-productionTime & Number\\
+detectionTime & time\\
+productionTime & time\\
 %\rowcolor{tcA}
-notificationTime & Number\\
-receptionTime & Number\\
+notificationTime & time\\
+receptionTime & time\\
 %\rowcolor{tcA}
-context & Set<Attribute>
+%context & Set<Attribute>
 \end{tabular}
 \caption {Event types attributes}
 \label{tab:evtAttributes}
 \end{center}
 \end{table}
- An event instance (or simply event) is an occurrence of an event type.
+\subsubsection{Event occurence}
+ An event occurence (or simply event) $e$ is an instance of an event type \textit{EventType}, that is $e\ \equiv \ EventType$. For example, considering the  previously defined event type \textit{MeterAlarm}, $e=\langle 'meter5',\ 1,\ 1,\ 2,\ 4,\ 9,\ 1 \rangle$ is an event instance produced by producer \textit{meter5}, at time 1, notified at time 2, received at time 4, for which the voltage and current values are 9 and 1 respectively. 
  
 % \subsection{Simple event type, complex event type}
-Event types can be classified as simple event types that describe elementary facts, and complex event types that describe complex situations by event combinations (see Figure \ref{fig:eventtype}). 
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[scale=0.5]{chap3/images/eventType.jpg}
-    % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
-  \end{center}
-  \caption{Classification of event types}
-  \label{fig:eventtype}
-\end{figure}
-
-%\subsubsection{Simple event type}
-Event producers produce instances of a simple event type. Simple event instances are not generated as a result of processing others events.
-
-%\subsubsection{Complex event type}
-%\label{ch3:sec2.3.2}
-Complex event types represent situations (relevant or critical) that can be inferred from the occurrences of others events. Complex events are produced by processing other events. Event processing operators are defined in Section \ref{ch3:sec2.3.3}.
- 
+% Event types can be classified as simple event types that describe elementary facts, and complex event types that describe complex situations by event combinations (see Figure \ref{fig:eventtype}). 
+% \begin{figure}[H]
+%   \begin{center}
+%     \includegraphics[scale=0.5]{chap3/images/eventType.jpg}
+%     % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
+%   \end{center}
+%   \caption{Classification of event types}
+%   \label{fig:eventtype}
+% \end{figure}
+% 
+% %\subsubsection{Simple event type}
+% Event producers produce instances of a simple event type. Simple event instances are not generated as a result of processing others events.
+% 
+% %\subsubsection{Complex event type}
+% %\label{ch3:sec2.3.2}
+% Complex event types represent situations (relevant or critical) that can be inferred from the occurrences of others events. Complex events are produced by processing other events. Event processing operators are defined in Section \ref{ch3:sec2.3.3}.
+ \subsection{Event streams}
+  An event stream is a continuous, append-only sequence of events $\{e_1,\ ...,\ e_n\}$.
+  We note $Stream(s, T)$ the stream of events of type T generated by the source s. That is,
+  $Stream(s, T) = \{e_1,\ ...,\ e_n\ |\ \forall e_i,\ e_i \equiv T\ \bigwedge\ e_i.producerID = s\}$.
+  If $S$ is a set of sources, then $\{\ \bigcup  stream(s,T),\ s\ \in\ S\}$ defines a stream of events of type T, denoted $Stream(T)$.
  \section{Stream based composition operators}
  \label{ch3:sec3}
  %\subsection{Event streams}
- An event stream is a continuous, append-only sequence of events. We note $Stream(s, T)$ the stream of events of type T generated by the source s. If S is a set of sources, then $\{\bigcup  stream(s,T), s \in S\}$ defines a stream of events of type T, denoted $Stream(T)$.
-
- 
- Complex events are produced by composing event streams. Event stream composition operators specify the types of operations that can be performed on event streams. An event stream composition operator $op$ takes one or many input event streams of a given type, and produces an output stream of a given type (see Figure \ref{fig:op}).
+%  An event stream is a continuous, append-only sequence of events. We note $Stream(s, T)$ the stream of events of type T generated by the source s. If S is a set of sources, then $\{\bigcup  stream(s,T), s \in S\}$ defines a stream of events of type T, denoted $Stream(T)$. 
+ %Complex events are produced by composing event streams. 
+ Event stream composition operators specify the types of operations that can be performed on event streams. An event stream composition operator $op$ takes one or many input event streams of a given type, and produces an output stream of a given type (see Figure \ref{fig:op}). In the following, we  adopt the notation $ES_i$ to denote the event stream of type $E_i$, that is $ES_i\ =\ Stream(E_i)$. 
  \begin{figure}[H]
   \begin{center}
     \includegraphics[scale=0.65]{chap3/images/op.pdf}
@@ -108,15 +139,32 @@ Complex event types represent situations (relevant or critical) that can be infe
 \end{figure}
 Event stream composition operators considered here are : filter, logic operators, sequence, window operators, aggregation operators, selection operator and flatten.  
   \subsection{Filter}
-  The \textit{filter} operator selects events in an input stream that satisfy a given predicate. The \textit{filter} operator is denoted $filter (ES_i, P)$. It receives one input stream $ES_i$ and a predicate $P$. The filter operator produces an event $e$ in the output event stream each time an event $e_i$ in the input stream satisfies the predicate $P$, that is if $P(e_i)= true$. The context of the output event $e$ is the same as the context of the input occurrence $e_i$.
-  That is, $e.context = e_i.context$.
-  \\ For example, let's consider the event type $MeterMeasure<meterID:string, realPower:double>$ and some event instances of type MeterMeasure, $e_1=<``meter1``, 7>, e_2=<``meter1``, 5>, e_3=<``meter1``, 4>, e_4=<``meter1``, 6>$. Let's also consider the event stream $ES=Stream(MeterMeasure)= \{e_1, e_2, e_3, e_4, ... \}$. 
-  \\Then, $filter(ES, realPower > 5)= \{e_1, e_4, ... \}$. Events $e_2$ and $e_3$ have been filtered out by the filter operator since they don't not satisfy the predicate ``realPower > 5``.
- \subsection{Logic operators}
- Logic operators produce an event stream based on the occurrence of events in input streams. They are used to test specific pattern of occurences of event types.
+  The \textit{filter} operator selects events in an input stream that satisfy a given predicate. The \textit{filter} operator is denoted $filter_P (ES_i)$. It receives as parameters one input stream $ES_i$ and a predicate $P$.
+  The predicate P is defined according to the following rules:
+  \begin{itemize}
+   \item $A_i\ \theta\ v_i$ is a predicate, where
+      \subitem- $A_i$ is the name of an attribute of $E_i$, that is $\exists \hat{t_j}$ such that $\hat{t_j}$ is an attribute type of $E_i$ and $name(\hat{t_j})\ =\ A_i$ 
+      \subitem- $\theta\ \in\ \{<,\ >,\ =,\ \leq,\ \geq\}$ is a comparison operator,
+      \subitem- $v_i\ \in \llbracket \hat{t_j}\rrbracket$ is a value. 
+    \item if $P_1$ and $P_2$ are predicates, then
+      \subitem- $P_1\ \bigwedge\ P_2$ is a predicate. The symbol $\bigwedge$ denotes the conjunction.
+      \subitem- $P_1\ \bigvee\ P_2$ is a predicate. The symbol $\bigvee$ denotes the disjunction.
+  \end{itemize}
+ The output of the filter operator is an event stream having the same type as $E_i$. Its output is defined as
+ $filter_P(ES_i) = \{e_j\ \mid\ e_j\ \in\ ES_i\ \bigwedge\ P(e_j)\ =\ true\}$.
+ % The filter operator produces an event $e$ in the output event stream each time an event $e$ in the input stream satisfies the predicate $P$, that is if $P(e)= true$.
+  \\ For example, let's consider the event type $E_i\ =\ MeterMeasure:\langle$ \textit{meterID : string, realPower : double}$\rangle$\footnote{We omitted the header attributes} and some event instances of type $E_i$, $e_1=\langle``meter1``, 7\rangle$, $e_2=\langle``meter1``, 5\rangle, e_3=\langle``meter1``, 4\rangle, e_4=\langle``meter1``, 6\rangle$. 
+  \\Let's also consider the event stream $ES_i$ \textit{=Stream(MeterMeasure)} = $\{e_1, e_2, e_3, e_4, ... \}$. 
+  \\Then, $filter_{realPower > 5}(ES_i)= \{e_1, e_4, ... \}$. Events $e_2$ and $e_3$ have been filtered out by the filter operator since they don't satisfy the predicate ``realPower > 5``.
+ %\subsection{Logic operators}
+ %Logic operators produce an event stream based on the occurrence of events in input streams. They are used to test specific pattern of occurences of event types.
  
- \subsubsection{Disjunction}
- The disjunction operator merges the input streams into one output stream. The disjunction operator is denoted $OR(ES_1, ES_2, …, ES_n)$. It produces events in the output stream at the occurrence of events in any of the input streams $ES_i, i \in \{1, 2, …,n\}$. An event $e$ is produced in the output stream if an instance $e_i$, of any input stream $ES_i$ occurs. The context of the complex event $e$ contains all occurrences $e_i$ that occur. 
+ \subsection{Disjunction}
+ The disjunction operator merges the input streams into one output stream. The disjunction operator is denoted $OR(ES_1, ES_2, …, ES_n)$. 
+ The output of the disjunction operator is an event stream of type $E_1\oplus E_2 ...\oplus E_n$, defined as
+ $OR(ES_1, ES_2 ..., ES_n) = \{e_j\ \mid\ \exists i\ \in\ [1..n],\ e_j\ \in\ ES_i\}$ = $\bigcup ES_i,\ i\ \in\ [1..n]$.
+ The disjunction operator produces events in the output stream at the occurrence of events in any of the input streams $ES_i,\ i\ \in\ [1..n]$. 
+ %An event $e$ is produced in the output stream if an instance $e_i$, of any input stream $ES_i$ occurs. The context of the complex event $e$ contains all occurrences $e_i$ that occur. 
 For example, let's consider the event streams $ES_1$ and $ES_2$ in Figure \ref{fig:op_or_exple}.
 %types \textit{MeterMeasure} and \textit{MeterAlarm} denoting respectively a measure and an alarm generated by a smart meter. 
 %\\Let's consider $ES_1 = Stream(MeterMeasure)$ and $ES_2 = Stream(MeterAlarm)$. Then, $OR(ES_1, ES_2)$  denotes the event stream containing measure and alarm events.
@@ -129,12 +177,16 @@ In this example, the output of $OR(ES_1, ES_2)$ is the sequence $\{e_{1,1}, e_{2
   \caption{Example situation 1. The time associated to events represents the time at which the events are received by the operator.}
   \label{fig:op_or_exple}
 \end{figure}
-\subsubsection{Conjunction}
-  The conjunction operator is used to ensure that an event occured in all input streams. The conjunction operator is  denoted $AND(ES_1, ES_2, …, ES_n)$. It produces events in the output stream at the occurrence of events in all of the input streams $ES_i, i \in \{1, 2, …,n\}$. An event $e$ is produced in the output stream if events $e_1, e_2, …, e_n$ occur respectively in input streams $ES_1, ES_2, …, ES_n$, regardless their occurrence order. The context of the complex event $e$ contains all events $e_1, e_2, …, e_n$.
+\subsection{Conjunction}
+  The conjunction operator is used to ensure that at least one event occured in all input streams. The conjunction operator is  denoted $AND(ES_1, ES_2, …, ES_n)$. 
+   The output of the disjunction operator is an event stream of type $A\ :\ \langle context\ :\ \{E_1\oplus E_2\oplus ... \oplus E_n\} \rangle$\footnote{We omitted the header attributes}, defined as follows:
+    $e\ \in\ AND(ES_1, ..., ES_2)$ iff $\forall i\ \in\ [1..n],\ \exists e_{i,j}\ \mid\ e_{i,j}\ \in\ ES_i$. The \textit{context} attribute is defined as follows: \textit{e.context} = $\{e_{i,j}\ \mid\ \forall i, e_{i,j}\ \in\ ES_i\}$.    
+  %It produces events in the output stream at the occurrence of events in all of the input streams $ES_i, i \in \{1, 2, …,n\}$. 
+  \\In other words, an event $e$ is produced in the output stream if events $e_1, e_2, …, e_n$ occur respectively in input streams $ES_1, ES_2, …, ES_n$, regardless their occurrence order. The attribute \textit{context} of the event $e$ contains all events $e_1, e_2, …, e_n$.
  For example, by considering again the event streams $ES_1$ and $ES_2$ in Figure \ref{fig:op_or_exple}, the output of $AND(ES_1, ES_2)$ will be:
  \begin{itemize}
-  \item A complex event $ec_1$ at time t2 with the event parameters $e_{1,1}$ and $e_{2,1}$
-  \item A complex event $ec_2$ at time t4 with the event parameters $e_{2,2}$ and $e_{1,2}$.
+  \item An event $e_1$ at time t2 with the event parameters $e_{1,1}$ and $e_{2,1}$, such that $e_1.context=\{ e_{1,1}$, $e_{2,1}\}$
+  \item An event $e_2$ at time t4 with the event parameters $e_{2,2}$ and $e_{1,2}$, such that $e_2.context=\{ e_{2,2}$, $e_{1,2}\}$.
  \end{itemize}
 %  \begin{figure}[h]
 %   \begin{center}
@@ -145,14 +197,19 @@ In this example, the output of $OR(ES_1, ES_2)$ is the sequence $\{e_{1,1}, e_{2
 %   \label{fig:op_and_exple}
 % \end{figure}
  \subsection{Sequence}
- The sequence operator captures precedence order of events in input streams. The sequence operator is denoted $SEQ(ES_1, ES_2, …, ES_n)$, and receives two or more input event streams $ES_1, ES_2, … ES_n$. The sequence operator produces a complex event $e$ in output stream each time instances $e1$ in $ES_1$, $e_2$ in $ES_2$,…, $e_n$ in $ES_n$ are received in the specified order. 
+ The sequence operator captures precedence order of events in input streams. The sequence operator is denoted $SEQ(ES_1, ES_2, …, ES_n)$, and receives two or more input event streams $ES_1, ES_2, … ES_n$. 
+  The output of the disjunction operator is an event stream of type $A\ :\ \langle context\ :\ \{E_1\oplus E_2\oplus ... \oplus E_n\} \rangle$\footnote{We omitted the header attributes}, defined as follows:\\
+$e\ \in\ SEQ(ES_1, ..., ES_2)$ iff $\ \exists\ e_{1}\ \in\ ES_1, ..., e_{n}\ \in\ ES_n\ \mid\ \forall i\ \in\ [1..n-1],\ e_{i}.receptionTime < e_{i+1}.receptionTime$.
+\\The \textit{context} attribute contains the set of events $e_i$ that occur. That is, \textit{e.context} = $\{e_{i}\ \mid\ e_{i}$ occurred in $ES_i, \forall i\ \in\ [1..n]\}$.
+  
+  In other words, the sequence operator produces an event $e$ in output stream each time instances $e_1$ in $ES_1$, $e_2$ in $ES_2$,…, $e_n$ in $ES_n$ are received in the specified order. 
  Then, sequence denotes that $\forall i$, occurrence $e_i$ “is received before” occurrence $e_{i+1}$. 
- This implies that the reception time of event $e_1.receptionTime < e_2.receptionTime < …< e_n.receptionTime$.
- The context of the complex ec contains all events $e_1$ and $e_2$, …, $e_n$. 
+ %This implies that the reception time of event $e_1.receptionTime < e_2.receptionTime < …< e_n.receptionTime$.
+ The context attribute of the event $e$ contains all events $e_1$ and $e_2$, …, $e_n$. 
  For example, let's consider the event streams $ES_1$ and $ES_2$ in Figure \ref{fig:op_seq_exple}, the output of $SEQ(ES_1, ES_2)$ will be:
  \begin{itemize}
-  \item A complex event $ec_1$ at time t2 with the event parameters $e_{1,1}$ and $e_{2,1}$
-  \item A complex event $ec_2$ at time t5 with the event parameters $e_{1,2}$ and $e_{2,3}$.
+  \item An event $e_1$ at time t2 with the event parameters $e_{1,1}$ and $e_{2,1}$, such that $e_1.context=\{ e_{1,1}$, $e_{2,1}\}$;
+  \item an event $e_2$ at time t5 with the event parameters $e_{1,2}$ and $e_{2,3}$, such that $e_2.context=\{ e_{1,2}$, $e_{2,3}\}$
  \end{itemize}
  \begin{figure}[h]
   \begin{center}
@@ -176,13 +233,12 @@ Time based windows define windows using time intervals.
   \label{fig:op_winwithin_exple}
 \end{figure}
 \begin{itemize} 
-\item \textbf{Fixed windows}: $win:within(t_b, t_e, ES)$. Defines a fixed time interval $[t_b, t_e]$. The output stream contains a single finite event stream $ES_{f,1}$ such that $\forall e \in ES, e \in ES_{f,1}$ iff $t_b \leq e_i.receptionTime \leq t_e $. In the example depicted in Figure \ref{fig:op_winwithin_exple}, the output of $win:within(t_b, t_e, ES)$ is the finite event stream $\{e_2, e_3\}$ 
-\item \textbf{Landmark windows}: $win:since(t_b, ES)$. Defines a fixed lower bound time $tb$. The output stream is a sequence of finite event streams $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each $ES_{f,i}$ contains events $e_i$ received since the time lower bound $t_b$. That is, $\forall i, e \in ES_{f,i}$ iff $t_b \leq e_i.receptionTime$.
-In the example depicted in Figure \ref{fig:op_winwithin_exple}, the output of $win:since(t_b, ES)$ is the finite event stream $\{e_2, e_3, e_4\}$ 
-\item \textbf{Sliding windows}: $win:sliding(t_w, t_s, ES)$. Defines a time duration $t_w$ and a time span $t_s$. The output stream
-is a sequence of finite event streams  $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each $ES_{f,i}$ contains events from stream $ES$ produced 
+\item \textbf{Fixed windows}: $win:within_{(t_b, t_e)}(ES)$. Defines a fixed time interval $[t_b, t_e]$. The output stream contains a single finite event stream $ES_{f,1}$ such that $\forall e \in ES, e \in ES_{f,1}$ iff $t_b \leq e_i.receptionTime \leq t_e $. In the example depicted in Figure \ref{fig:op_winwithin_exple}, the output of $win:within_{(t_b, t_e)}(ES)$ is the finite event stream $\{e_2, e_3\}$ 
+\item \textbf{Landmark windows}: $win:since_{t_b}(ES)$. Defines a fixed lower bound time $t_b$. The output stream is a sequence of finite event streams $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each $ES_{f,i}$ contains events $e_i$ received since the time lower bound $t_b$. That is, $\forall i, e \in ES_{f,i}$ iff $t_b \leq e_i.receptionTime$.
+In the example depicted in Figure \ref{fig:op_winwithin_exple}, the output of $win:since_{t_b}(ES)$ is the finite event stream $\{e_2, e_3, e_4\}$ 
+\item \textbf{Sliding windows}: $win:sliding_{(t_w, t_s)}(ES)$. Defines a time duration $t_w$ and a time span $t_s$. The output stream is a sequence of finite event streams  $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each $ES_{f,i}$ contains events from stream $ES$ produced 
 during last $t_w$ time units. The finite event streams in the sequence are produced each $t_s$ time unit. That is, if $ES_{f,i}$ is produced at time t, then $ES_{f,i+1}$ will be produced at time $t+t_s$.
-In the example depicted in Figure \ref{fig:op_winsliding_exple}, the output of $win:sliding(t_w, t_s, ES)$ are the finite event streams $\{e_1, e_2\}$ and $\{e_4\}$.
+In the example depicted in Figure \ref{fig:op_winsliding_exple}, the output of $win:sliding_{(t_w, t_s)}(ES)$ are the finite event streams $\{e_1, e_2\}$ and $\{e_4\}$.
 \begin{figure}[h]
   \begin{center}
     \includegraphics[scale=0.65]{chap3/images/winslidingExample.jpeg}
@@ -195,13 +251,17 @@ In the example depicted in Figure \ref{fig:op_winsliding_exple}, the output of $
 \subsubsection{Size bounded windows}
 A size bounded window defines the number of events for each window. We distinguish between size fixed windows and sliding size fixed windows.
 \begin{itemize}
- \item \textbf{Size fixed windows}: $win:batch(nb, ES)$. Specifies a fixed size \textit{nb} of each finite stream. The output stream is a sequence of finite event streams $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each finite event stream $ES_{f,i}$ contains $nb$ most recent events from $ES$, and are non-overlapping. If we consider the event stream $ES = \{e_1, e_2, e_3, e_4, e_5, e_6, …\}$, $win:batch(3, ES)$ will result in finite event streams $\{ES_{f,1}, ES_{f,2},...\}$ such that $ES_{f,1} = \{ e_1, e_2, e_3\}$, $ES_{f,2} = \{ e_4, e_5, e_6\}$, and so on. 
+ \item \textbf{Fixed size windows}: $win:batch_{nb}(ES)$. Specifies a fixed size \textit{nb} of each finite stream. The output stream is a sequence of finite event streams $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each finite event stream $ES_{f,i}$ contains $nb$ most recent events from $ES$, and are non-overlapping. If we consider the event stream $ES = \{e_1, e_2, e_3, e_4, e_5, e_6, …\}$, $win:batch_3(ES)$ will result in finite event streams $\{ES_{f,1}, ES_{f,2},...\}$ such that $ES_{f,1} = \{ e_1, e_2, e_3\}$, $ES_{f,2} = \{ e_4, e_5, e_6\}$, and so on. 
 
- \item \textbf{Moving fixed size windows}: $win:mbatch (nb, m, ES)$. Defines a fixed size $nb$ of each finite stream, and a number of events $m$ after which the window moves. The output stream is a sequence of finite event streams $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each $ES_{f,i}$ contains $nb$ most recent events from $ES$. $ES_{f,i+1}$ is started after $m$ events are received in $ES_{f,i}$ (moving windows). As result, an event instance may be part of many finite event streams. This is the case if $m \leq nb$. For example, if we consider windows of size nb=3 moving after each m = 2 events, that is $win:mbatch (3, 2, ES)$, the event stream $ES = \{ e_1, e_2, e_3, e_4, e_5, e_6, e_7, …\}$ will be partitioned into finite event streams $\{ES_{f,1}, ES_{f,2}, ES_{f,3} , …\}$ such that $ES_{f,1}=\{e_1, e_2, e_3\}$, $ES_{f,2} = \{ e_3, e_4, e_5\}$, $ES_{f,3} = \{e_5, e_6, e_7\}$, and so on.
+ \item \textbf{Moving fixed size windows}: $win:mbatch_{(nb, m)}(ES)$. Defines a fixed size $nb$ of each finite stream, and a number of events $m$ after which the window moves. The output stream is a sequence of finite event streams $ES_{f,i}, i \in \{1, 2, …, n\}$, such that each $ES_{f,i}$ contains $nb$ most recent events from $ES$. $ES_{f,i+1}$ is started after $m$ events are received in $ES_{f,i}$ (moving windows). As result, an event instance may be part of many finite event streams. This is the case if $m \leq nb$. For example, if we consider windows of size nb=3 moving after each m = 2 events, that is $win:mbatch_{(3, 2)}(ES)$, the event stream $ES = \{ e_1, e_2, e_3, e_4, e_5, e_6, e_7, …\}$ will be partitioned into finite event streams $\{ES_{f,1}, ES_{f,2}, ES_{f,3} , …\}$ such that $ES_{f,1}=\{e_1, e_2, e_3\}$, $ES_{f,2} = \{ e_3, e_4, e_5\}$, $ES_{f,3} = \{e_5, e_6, e_7\}$, and so on.
 \end{itemize}
 
 \subsection{Aggregation operators}
-Applied on a stream of finite streams $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$, an aggregator operator $aggregate(attr, Stream(Stream_f(E_i)))$ computes for each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, a complex event $e$ which carry (within its context) the aggregated value of the attribute \textit{attr} over events occurrences in $ES_{f,i}$. The output is a stream of such complex events. Aggregates operators include \textit{max, min, count, avg} and \textit{sum}. 
+Applied on a stream of finite streams $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$, an aggregator operator $aggregate_{attr,\ aggrAttr}(Stream(Stream_f(E)))$ computes for each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, the aggregated value of the attribute \textit{attr} over events occurrences in $ES_{f,i}$.
+\\The attribute \textit{attr} is the name of an attribute of $E$, that is $\exists \hat{t_j}$ such that $\hat{t_j}$ is an attribute type of $E$ and $name(\hat{t_j})\ =\ attr$.  
+\\The output is a event stream of type $A\ :\ \langle aggrAttr\ :\ D \rangle$\footnote{We omitted the header attributes} 
+where $D=def(\hat{t_j})$. 
+\\ Aggregate operators include \textit{max, min, count, avg} and \textit{sum}. 
 \begin{itemize}
  \item The $max$ operator compute the maximum value of the attribute over the event instances in $ES_{f,i}$.
  \item The $min$ operator compute the minimum value of the attribute over the event instances in $ES_{f,i}$.
@@ -211,7 +271,7 @@ Applied on a stream of finite streams $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2}
 \end{itemize}
 
 \subsection{Selection operators}
-A selection operator takes as input a stream of finite streams $\{ES_{f,1}, ES_{f,2},...\}$ and produce as output an event stream ${e_1, e_2, … }$ such that for all i, each $e_i$ is a selection of a particular event from $ES_{f,i}$. The choice of that particular occurrence depends on the selection operator: %[GD93, GD94]:
+A selection operator takes as input a stream of finite streams $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2},...\}$ and produce as output an event stream of type $E$, with values ${e_1, e_2, … }$ such that for all i, each $e_i$ is a selection of a particular event from $ES_{f,i}$. The choice of that particular occurrence depends on the selection operator: %[GD93, GD94]:
 \begin{itemize}
  \item \textbf{ First occurrence}: $first (Stream(Stream_f(E)))$. \\
 For each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, selects the first event occurrence. For example, if we apply the first operator to the stream of finite streams $\{\{e_1, e_2\}$, $\{ e_3, e_4, e_5, e_6\}$, $\{ e_7, e_8\},…\}$, we obtain as output the stream $\{e_1, e_3, e_7, …\}$.
@@ -219,8 +279,8 @@ For each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, selects the first eve
 For each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, selects the last event occurrence. For example, if we apply the last operator to the stream of finite streams $\{\{e_1, e_2\}$, $\{ e_3, e_4, e_5, e_6\}$, $\{ e_7, e_8\},…\}$, we obtain as output the stream $\{e_2, e_6, e_8, …\}$.
 \end{itemize}
 \subsection{Flatten}
- Flatten operator takes as input a stream of finite event streams $\{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$  and produce as output a stream of events constructed by concatenating events in $ES_{f,1}, ES_{f,2}, ES_{f,3}$, and so on. 
-For example, if we consider the stream of finite streams $\{\{e_1\}, \{e_2, e_3\}, \{e_4, e_5, e_6\}, …\}$, the flatten operator produces the output stream $\{e_1, e, e_2, e_3,e, e_4, e_5, e_6, e, …\}$ where $e$ is a special “empty” event that indicates the end of each finite stream in the output stream.
+ Flatten operator takes as input a stream of finite event streams $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$  and produce as output a event stream of type $E$, which contains the concatenation of events in $ES_{f,1}, ES_{f,2}, ES_{f,3}$, and so on. 
+For example, if we consider the stream of finite streams $\{\{e_1\}, \{e_2, e_3\}, \{e_4, e_5, e_6\}, …\}$, the flatten operator produces the output stream $\{e_1, e, e_2, e_3,e, e_4, e_5, e_6, e, …\}$ where $e$ is a special “empty” event that indicates the end of each finite stream in the output stream. We assume that for all event type $E$, the empty event $e$ satisfies $e\ \equiv \ E$.
 
 %\section{Selection policy}
 %\label{ch3:sec4}
@@ -247,76 +307,37 @@ For example, if we consider the stream of finite streams $\{\{e_1\}, \{e_2, e_3\
  % \item[Cumulative]  All the event occurrences are accumulate in order to produce the complex event. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $b_1$ is combined with both events $a_1$ and $a_2$.
 % \end{description}
 
- \section{Event composition graph}
+ \section{Event streams composition}
  \label{ch3:sec5}
- Complex events are defined by consumers in order to state the situations they are interested in. Those situations can be described in terms of operations that have to be applied to event streams in order to obtain the desired result.   
- %As mentionned is Section \ref{ch3:sec2.3.2}, complex events are produced by processing event streams.
- A complex event is represented as an \textit{event composition graph} (see Figure \ref{fig:ecg}). An event composition graph identifies the event streams to be processed with the operation chain to be performed on them. In a more formal way, an event composition graph is a direct acyclic graph (DAG) $G=<\mathcal{N}, \mathcal{S}>$, where $\mathcal{N}= \{P \cup O\}$ consists in a set of terminal nodes $P$ and a set of non-terminal nodes $O$, and a set of edges $\mathcal{S}$. Terminal nodes $P$ represent input stream producers and non-terminal nodes $O$ represent stream based operators. The edges $\mathcal{S}$ represent event streams. From an end user point of view, an event composition graph can be specified using either a graphical user interface, or programmaticaly. 
+ %\subsection{Event stream composition expression}
+ Stream based operators can be chained in order to produce complex event streams that capture particular situations.
+ This is called event stream composition.
+ An event stream composition is expressed by an event stream composition expression.
+An event stream composition expression is defined as:
+\begin{itemize}
+ \item $A\ =\ Op(ES_1,...ES_n)$ is an event stream composition expression named $A$, where $Op$ denotes a stream based operator and $\forall i\ \in\ [1..n]$, $ES_i$ denotes an event stream.
+ \item $A\ =\ Op_1(Op_2(...(Op_n(A_1,...A_m))...))$ where $\forall i\ \in\ [1..n],\ \forall j\ \in\ [1..m]$, $Op_i$ is a stream based operator and $A_j$ is an event stream composition expression.
+ \end{itemize}
+ The event stream composition expression defines an event stream named $A$
+ An event stream composition expression A defines an event stream with the same name $A$. 
+For example, if we consider the event type $MeterMeasure:\langle$ \textit{meterID : string, realPower : double}$\rangle$ and the event stream $ES=Stream(MeterMeasure)$, we can define an event stream \textit{ComplexStream} that computes the aggregated real power of meter \textit{AMI100} between time 10 and 50 as follows:
+ \\$ComplexStream=avg_{realPower,\ avgP}$\textit{(win:within(}$filter_{meterID='AMI100'}(ES)$\textit{, 10, 50))}.
+ The definition of the \textit{ComplexStream} starts by filtering the event stream $ES$ on the predicate \textit{meterID='AMI100'}. Then, the result is used to compute a fixed windows (\textit{win:within}) of events between time 10 and 50. The output stream, which is a finite stream is then aggregated on the attribute \textit{realPower}. The aggregated value can be retrieved by accessing the \textit{avgP} attribute of the event $e$ in the \textit{ComplexStream} output stream.
+ %Complex events are defined by consumers in order to state the situations they are interested in. Those situations can be described in terms of operations that have to be applied to event streams in order to obtain the desired result.   
+% A complex event is represented as an \textit{event composition graph} (see Figure \ref{fig:ecg}). An event composition graph is a structure that identifies the event streams to be processed with the operation chain to be performed on them. In a more formal way, an event composition graph is a direct acyclic graph (DAG) $G=<\mathcal{N}, \mathcal{S}>$, where $\mathcal{N}= \{P \cup O\}$ consists in a set of terminal nodes $P$ and a set of non-terminal nodes $O$, and a set of edges $\mathcal{S}$. Terminal nodes $P$ represent input stream producers and non-terminal nodes $O$ represent stream based operators. The edges $\mathcal{S}$ represent event streams. From an end user point of view, an event composition graph can be specified using either a graphical user interface, or programmaticaly. 
  %We  In this thesis, we only consider their internal representation as DAGs.% with less focus on how such DAG can be defined from an end user point of view.   
- \begin{figure}[H]
-  \begin{center}
-    \includegraphics[scale=0.65]{chap3/images/ecg.jpg}
+% \begin{figure}[H]
+ % \begin{center}
+  %  \includegraphics[scale=0.65]{chap3/images/ecg.jpg}
     % event.png: 472x52 pixel, 72dpi, 16.65x1.83 cm, bb=0 0 472 52
-  \end{center}
-  \caption{Event composition graph}
-  \label{fig:ecg}
-\end{figure}
- 
- \section{Quality of service}
- \label{ch3:sec-three}
- Event streams composition in smart grids face many challenges that are due to QoS that have to be guaranteed. This section first discusses such QoS requirements and then, presents how they are modeled as QoS expressions.              
-\subsection{QoS dimensions}
-The quality of serice dimensions that we identify as relevant for smart grids are:
-\begin{itemize}
- \item \textit{Latency}. Once detected, events may have to be notified as fast as possible to consumers. Such a timing constraint is even critical in some applications. For example, in the common practice for power device protection, the circuit breaker must be opened immediately if the voltage or current on a power device exceeds the normal values. The notification latency of an event is the time elapsed between its production and its notification to interested consumers.
-%The notification latency of an event is the time elapsed between its production and its notification to interested consumers. 
-%The notification latency constraint imposed on an event processing unit defines an upper bound on the notification latency of events produced by that event processing unit.
-%The notification latency QOS criteria associated with an event defines an upper bound on its notification latency
-%In SoGrid, the notification of an event can be immediate (low latency) or delayed (high latency)
-
- \item \textit{Event priority}. Event priority defines a priority order between events. In some contexts, there may exist priorities between events that have to be captured by the event processing runtime. For example in a smart grid, alarm events are generally higher priority than events that report energy consumption. Events that have a higher priority have to be processed and notified earlier than less priority events.
-
- \item \textit{Memory occupation}. Different devices may have different available memory capacities. To adapt the event processing to the memory capacity of each device, it must be a way to specify the maximum memory occupation incurred by an event processing unit at the execution time. The memory occupation constraint gives an upperbound on the number of events that an event processing unit can maintain in its main memory at execution time.
-\end{itemize}
-
-\subsection{QoS expression}
-Let's consider three domains $D_{latency}$, $D_{priority}$, $D_{memory}$, corresponding to the QoS dimensions latency, event prioity and memory occupation respectively.
-Those domains are described below:
-%The domains corresponding to the QoS criteria we considered are described below:
-\begin{itemize}
- \item $D_{latency} \subseteq R+$, as the latency corresponds to a time delay (an expected value for measuring time belongs to the set of positive real numbers). The domain inherits the properties of R+ (e.g. the operators of comparison). Best is shortest for latencies, the latency is bounded with the comparison operator ``less than'' (<) and ``less or equal to'' ($\leq$). 
- \item $D_{priority} \subseteq N^*$. An event type is associated to a priority level. The lower is the priority level, the higher is the priority associated to the event. The priority level varies according to the event type. The domain inherits the properties of $N$ (e.g. the operators of comparison). 
- The priority is heavily restricted bounded, thus ``equal to'' (=) is the only accepted comparison operator.
- \item $D_{memory}  \subseteq N$, as the memory corresponds to a quantity. The domain inherits the properties of $N$. The memory occupation is associated to an upper-bound that indicates the maximum memory available on a processing device. This is denoted by the comparison operator ``less or equal to'' ($\leq$).  
-\end{itemize}
-Let us assume $D$ the set of the QoS domains that we considered, that is $D = D_{latency} \bigcup D_{priority}$ $ \bigcup D_{memory}$.
-Given a domain $D_Q$, we assume a function \textit{name($D_Q$)} that returns its  name, a function \textit{operator($D_Q$)} that returns the set of related operators, and a function \textit{value($D_Q$)} that returns the set of included values.
-For instance, let us consider the domain $D_{priority}$, thus: 
-\begin{itemize}
- \item \textit{name($D_{piority}$)} = event priority,
- \item \textit{operator($D_{priority}$)} = { equal to (=) },
- \item \textit{value($D_{latency}$)} = $N^*$, this is the set of all positive integer numbers.
-\end{itemize}
-Let also consider that $\mathcal{L}$ is the set of available processing devices.
-\subsubsection{Atomic QoS expression} 
-An atomic QoS expression is of the form $(d, \theta, v)$ or , $(d, \theta, v, l)$ where 
-\begin{itemize}
- \item d denotes a domain $D_Q , D_Q \in D$,
- \item $\theta \in$ \textit{operator($D_Q$)},
- \item $v \in$ \textit{value($D_Q$)},
- \item $l \in \mathcal{L}$ is a processing device.
-\end{itemize}
-For instance, the atomic QoS (latency, $\leq$, 2000) specifies that the latency for notifying an event must be less or equal to 2000 ms, assuming that the time unit is the millisecond. In the same way, the atomic QoS (memory, $\leq$, 1000, device1) specifies that the memory occupation on the device ``device1'' must be less or equal to 1000 Mo, assuming that the unit for the memory is the megabyte.  
-
-\subsubsection{Complex QoS expression} 
-A complex QoS expression specifies multiple QoS criteria. It is defined inductively as follows.
-\begin{enumerate}
- \item An atomic QoS is a complex QoS expression.
- \item If $QC_1$ and $QC_2$ are complex QoS expressions then $QC_1 \wedge QC_2$ is a complex QoS expression.
-\end{enumerate}
- The QoS expression (latency, $\leq$, 2000) $\wedge$ (event priority, =, 1) specifies that the latency must be less than or equal to 2000 ms, and in addition, the highest priority level (i.e. priority = 1) is required.
-%Dmemocc domain represent the memory occupation criterion;  Dmemocc ⊆ N ≤ m. Where  m corresponds to the maximum memory capacity of the current device. The domain inherits the properties of N. The event processing memory occupation has an upper-bound of the the number of events that an event processing unit can maintain, it is denoted by the comparison operator ‘less than or equal to’ (≤).
-
+  %\end{center}
+  %\caption{Event composition graph}
+  %\label{fig:ecg}
+%\end{figure}
+  %\subsection{Valid event stream composition expression}
+  
+  An event stream composition expression must be well formed. More precisely, the input of each stream based operator $Op_i$ implicated in the event stream composition expression must be consistent with the operator definition. For example, the input of an aggregate operators is a stream of finite streams, which can be computed using windows operators as in the \textit{ComplexStream} example. Moreover, the result of a windows operator, which is a stream of finite event streams, cannot be given directly as input to a filter operator as in the expression $filter_P(win:sliding_{(t_w,t_s)}(ES))$. This is due to the fact that the filter operator takes as input an event stream, an not a stream of finite event streams.
+  %To be consistent with the filter operator definition, the this expression     
  \section{Conclusion}
 In this chapter, we presented a model for event streams composition. We focused on the definition of concepts that are manipulated by an event stream composition system. First, we presented the concepts of event, simple and complex event types, and event streams. Then, we presented operators applicable to event streams in order to produce complex events, with their associate selection policies. After that, we presented how stream based operators can be combined together to define the event composition logic associate to a complex event. And finally, we presented some QoS dimensions applicable to an event composition, and how they can be specified using QoS expressions. 
 

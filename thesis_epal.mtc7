@@ -1,22 +1,22 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Event, event type, event streams}{\reset@font\mtcSfont 6}{section.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.1}Event}{\reset@font\mtcSSfont 6}{subsection.3.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.2}Event type}{\reset@font\mtcSSfont 7}{subsection.3.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Stream based composition operators}{\reset@font\mtcSfont 8}{section.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Filter}{\reset@font\mtcSSfont 9}{subsection.3.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Logic operators}{\reset@font\mtcSSfont 9}{subsection.3.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Disjunction}{\reset@font\mtcSSSfont 9}{subsection.3.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Conjunction}{\reset@font\mtcSSSfont 10}{figure.caption.11}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.3}Sequence}{\reset@font\mtcSSfont 10}{subsection.3.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.4}Window operators}{\reset@font\mtcSSfont 11}{subsection.3.2.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Time based windows}{\reset@font\mtcSSSfont 11}{subsection.3.2.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Size bounded windows}{\reset@font\mtcSSSfont 12}{figure.caption.14}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.5}Aggregation operators}{\reset@font\mtcSSfont 12}{subsection.3.2.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.6}Selection operators}{\reset@font\mtcSSfont 13}{subsection.3.2.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.7}Flatten}{\reset@font\mtcSSfont 13}{subsection.3.2.7}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Event composition graph}{\reset@font\mtcSfont 13}{section.3.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Quality of service}{\reset@font\mtcSfont 14}{section.3.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}QoS dimensions}{\reset@font\mtcSSfont 14}{subsection.3.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.2}QoS expression}{\reset@font\mtcSSfont 15}{subsection.3.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Atomic QoS expression}{\reset@font\mtcSSSfont 15}{subsection.3.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Complex QoS expression}{\reset@font\mtcSSSfont 16}{subsection.3.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Conclusion}{\reset@font\mtcSfont 16}{section.3.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.1}Definitions}{\reset@font\mtcSSfont 6}{subsection.3.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Preamble}{\reset@font\mtcSSSfont 6}{subsection.3.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Complex value types}{\reset@font\mtcSSSfont 6}{subsection.3.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Access to components of complex value instances}{\reset@font\mtcSSSfont 7}{Item.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.2}Event}{\reset@font\mtcSSfont 7}{subsection.3.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.3}Event type}{\reset@font\mtcSSfont 8}{subsection.3.1.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Event occurrence}{\reset@font\mtcSSSfont 9}{table.caption.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.4}Event streams}{\reset@font\mtcSSfont 9}{subsection.3.1.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Stream based composition operators}{\reset@font\mtcSfont 9}{section.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Filter}{\reset@font\mtcSSfont 10}{subsection.3.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Disjunction}{\reset@font\mtcSSfont 10}{subsection.3.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.3}Conjunction}{\reset@font\mtcSSfont 10}{subsection.3.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.4}Sequence}{\reset@font\mtcSSfont 11}{subsection.3.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.5}Window operators}{\reset@font\mtcSSfont 12}{subsection.3.2.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Time based windows}{\reset@font\mtcSSSfont 12}{subsection.3.2.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Size bounded windows}{\reset@font\mtcSSSfont 13}{figure.caption.12}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.6}Aggregation operators}{\reset@font\mtcSSfont 14}{subsection.3.2.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.7}Selection operators}{\reset@font\mtcSSfont 14}{subsection.3.2.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.8}Flatten}{\reset@font\mtcSSfont 15}{subsection.3.2.8}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Event streams composition}{\reset@font\mtcSfont 15}{section.3.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Conclusion}{\reset@font\mtcSfont 16}{section.3.4}}
