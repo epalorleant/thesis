@@ -70,8 +70,8 @@ Event composition, or specifically event streams composition supports the idea o
 %The set of operations applicable to events depends on the capacity of the underlying event model to expose the content of events. Event models that expose events content yield to more expressive event composition. 
 For that reason, we represent an event type as a tuple type:\\
 $EventType : \langle A_1 : D_1, ..., A_n : D_n\rangle.$ \\
-The definition of an event type includes the attributes presented in Table \ref{tab:evtAttributes}. The \textit{producerID} attribute refers to the id of the entity that produced the event occurence. The \textit{detectionTime} attribute refers to the time at which the event occurence has been detected by a source. The \textit{productionTime} attribute refers to the time at which the event has been produced (as a result of processings on others events) by an event-processing unit. The \textit{notificationTime} attribute refers to the time at which the event is notified to interested consumers. The \textit{receptionTime} attribute refers to the time at which an interested consumer receives the event. In addition to those attributes that are common to all event types, each event type includes other attributes that capture the data that are particular to this event type. For example, a \textit{MeterAlarm} event type is defined as $MeterAlarm\ :\ \langle$\textit{producerID : string,\ detectionTime : time,\ productionTime : time,\ notificationTime : time, receptionTime : time, voltage : real, current : real}$\rangle$.
-\\In addition to attributes presented in Table \ref{tab:evtAttributes}, the \textit{MeterAlarm} event type includes the attributes  \textit{idMeter:string, voltage:real, current:real} that represents data that are specific to the MeterAlarm event type. In the rest of this document, we will refer to the attributes presented in Table \ref{tab:evtAttributes} as \textit{header attributes}. For writing simplicity, we will sometimes omit the header attributes in the description of event types and occurences, when they are not relevant for the topic under consideration. For example, the $MeterAlarm$ event type previously defined can be simply defined as $MeterAlarm\ :\ \langle voltage: real,\ current: real\rangle$.  
+The definition of an event type includes the attributes presented in Table \ref{tab:evtAttributes}. The \textit{producerID} attribute refers to the id of the entity that produced the event occurrence. The \textit{detectionTime} attribute refers to the time at which the event occurrence has been detected by a source. The \textit{productionTime} attribute refers to the time at which the event has been produced (as a result of processings on others events) by an event-processing unit. The \textit{notificationTime} attribute refers to the time at which the event is notified to interested consumers. The \textit{receptionTime} attribute refers to the time at which an interested consumer receives the event. In addition to those attributes that are common to all event types, each event type includes other attributes that capture the data that are particular to this event type. For example, a \textit{MeterAlarm} event type is defined as $MeterAlarm\ :\ \langle$\textit{producerID : string,\ detectionTime : time,\ productionTime : time,\ notificationTime : time, receptionTime : time, voltage : real, current : real}$\rangle$.
+\\In addition to attributes presented in Table \ref{tab:evtAttributes}, the \textit{MeterAlarm} event type includes the attributes  \textit{idMeter:string, voltage:real, current:real} that represents data that are specific to the MeterAlarm event type. In the rest of this document, we will refer to the attributes presented in Table \ref{tab:evtAttributes} as \textit{header attributes}. For writing simplicity, we will sometimes omit the header attributes in the description of event types and occurrences, when they are not relevant for the topic under consideration. For example, the $MeterAlarm$ event type previously defined can be simply defined as $MeterAlarm\ :\ \langle voltage: real,\ current: real\rangle$.  
 
 \definecolor{tcB}{rgb}{1,1,1}
 \definecolor{tcA}{rgb}{0,0,0}
@@ -98,8 +98,8 @@ receptionTime & time\\
 \label{tab:evtAttributes}
 \end{center}
 \end{table}
-\subsubsection{Event occurence}
- An event occurence (or simply event) $e$ is an instance of an event type \textit{EventType}, that is $e\ \equiv \ EventType$. For example, considering the  previously defined event type \textit{MeterAlarm}, $e=\langle 'meter5',\ 1,\ 1,\ 2,\ 4,\ 9,\ 1 \rangle$ is an event instance produced by producer \textit{meter5}, at time 1, notified at time 2, received at time 4, for which the voltage and current values are 9 and 1 respectively. 
+\subsubsection{Event occurrence}
+ An event occurrence (or simply event) $e$ is an instance of an event type \textit{EventType}, that is $e\ \equiv \ EventType$. For example, considering the  previously defined event type \textit{MeterAlarm}, $e=\langle 'meter5',\ 1,\ 1,\ 2,\ 4,\ 9,\ 1 \rangle$ is an event instance produced by producer \textit{meter5}, at time 1, notified at time 2, received at time 4, for which the voltage and current values are 9 and 1 respectively. 
  
 % \subsection{Simple event type, complex event type}
 % Event types can be classified as simple event types that describe elementary facts, and complex event types that describe complex situations by event combinations (see Figure \ref{fig:eventtype}). 
@@ -113,7 +113,7 @@ receptionTime & time\\
 % \end{figure}
 % 
 % %\subsubsection{Simple event type}
-% Event producers produce instances of a simple event type. Simple event instances are not generated as a result of processing others events.
+% Event producers produces of a simple event type. Simple event instances are not generated as a result of processing others events.
 % 
 % %\subsubsection{Complex event type}
 % %\label{ch3:sec2.3.2}
@@ -157,7 +157,7 @@ Event stream composition operators considered here are : filter, logic operators
   \\Let's also consider the event stream $ES_i$ \textit{=Stream(MeterMeasure)} = $\{e_1, e_2, e_3, e_4, ... \}$. 
   \\Then, $filter_{realPower > 5}(ES_i)= \{e_1, e_4, ... \}$. Events $e_2$ and $e_3$ have been filtered out by the filter operator since they don't satisfy the predicate ``realPower > 5``.
  %\subsection{Logic operators}
- %Logic operators produce an event stream based on the occurrence of events in input streams. They are used to test specific pattern of occurences of event types.
+ %Logic operators produce an event stream based on the occurrence of events in input streams. They are used to test specific pattern of occurrences of event types.
  
  \subsection{Disjunction}
  The disjunction operator merges the input streams into one output stream. The disjunction operator is denoted $OR(ES_1, ES_2, …, ES_n)$. 
@@ -258,7 +258,7 @@ A size bounded window defines the number of events for each window. We distingui
 
 \subsection{Aggregation operators}
 Applied on a stream of finite streams $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$, an aggregator operator $aggregate_{attr,\ aggrAttr}(Stream(Stream_f(E)))$ computes for each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, the aggregated value of the attribute \textit{attr} over events occurrences in $ES_{f,i}$.
-\\The attribute \textit{attr} is the name of an attribute of $E$, that is $\exists \hat{t_j}$ such that $\hat{t_j}$ is an attribute type of $E$ and $name(\hat{t_j})\ =\ attr$.  
+The attribute \textit{attr} is the name of an attribute of $E$, that is $\exists \hat{t_j}$ such that $\hat{t_j}$ is an attribute type of $E$ and $name(\hat{t_j})\ =\ attr$.  
 \\The output is a event stream of type $A\ :\ \langle aggrAttr\ :\ D \rangle$\footnote{We omitted the header attributes} 
 where $D=def(\hat{t_j})$. 
 \\ Aggregate operators include \textit{max, min, count, avg} and \textit{sum}. 
@@ -279,7 +279,8 @@ For each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, selects the first eve
 For each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, selects the last event occurrence. For example, if we apply the last operator to the stream of finite streams $\{\{e_1, e_2\}$, $\{ e_3, e_4, e_5, e_6\}$, $\{ e_7, e_8\},…\}$, we obtain as output the stream $\{e_2, e_6, e_8, …\}$.
 \end{itemize}
 \subsection{Flatten}
- Flatten operator takes as input a stream of finite event streams $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$  and produce as output a event stream of type $E$, which contains the concatenation of events in $ES_{f,1}, ES_{f,2}, ES_{f,3}$, and so on. 
+The flatten operator is denoted $flatten(Stream(Stream_f(E)))$.
+The \textit{flatten} operator takes as input a stream of finite event streams $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$  and produces as output an event stream of type $E$, which contains the concatenation of events in $ES_{f,1}, ES_{f,2}, ES_{f,3}$, and so on. 
 For example, if we consider the stream of finite streams $\{\{e_1\}, \{e_2, e_3\}, \{e_4, e_5, e_6\}, …\}$, the flatten operator produces the output stream $\{e_1, e, e_2, e_3,e, e_4, e_5, e_6, e, …\}$ where $e$ is a special “empty” event that indicates the end of each finite stream in the output stream. We assume that for all event type $E$, the empty event $e$ satisfies $e\ \equiv \ E$.
 
 %\section{Selection policy}
@@ -301,9 +302,9 @@ For example, if we consider the stream of finite streams $\{\{e_1\}, \{e_2, e_3\
   %\label{fig:selectionpolicy}
 %\end{figure}
 %\begin{description}
- % \item[Recent]  Only the newest event occurence is selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_2$ is selected between $a_1$ and $a_2$.
- % \item[Chronologic]  Only the oldest event occurence is selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_1$ is selected between $a_1$ and $a_2$.
- % \item[Continuous] All the event occurences are selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_1$ and $a_2$ are selected. As result, two complex events are produced in the output stream, with event parameters \{$a_1$, $b_1$\} and \{$a_1$, $b_2$\} respectively.
+ % \item[Recent]  Only the newest event occurrence is selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_2$ is selected between $a_1$ and $a_2$.
+ % \item[Chronologic]  Only the oldest event occurrence is selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_1$ is selected between $a_1$ and $a_2$.
+ % \item[Continuous] All the event occurrences are selected. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $a_1$ and $a_2$ are selected. As result, two complex events are produced in the output stream, with event parameters \{$a_1$, $b_1$\} and \{$a_1$, $b_2$\} respectively.
  % \item[Cumulative]  All the event occurrences are accumulate in order to produce the complex event. In the example depicted in Figure \ref{fig:selectionpolicy}, the event $b_1$ is combined with both events $a_1$ and $a_2$.
 % \end{description}
 
@@ -320,7 +321,7 @@ An event stream composition expression is defined as:
  \end{itemize}
  The event stream composition expression defines an event stream named $A$
  An event stream composition expression A defines an event stream with the same name $A$. 
-For example, if we consider the event type $MeterMeasure:\langle$ \textit{meterID : string, realPower : double}$\rangle$ and the event stream $ES=Stream(MeterMeasure)$, we can define an event stream \textit{ComplexStream} that computes the aggregated real power of meter \textit{AMI100} between time 10 and 50 as follows:
+For example, if we consider the event type $MeterMeasure:\langle$ \textit{meterID : string, realPower : double}$\rangle$ and the event stream $ES=Stream(MeterMeasure)$, we can define an event stream \textit{ComplexStream} that computes the aggregated real power of meter \textit{'AMI100'} between time 10 and 50 as follows:
  \\$ComplexStream=avg_{realPower,\ avgP}$\textit{(win:within(}$filter_{meterID='AMI100'}(ES)$\textit{, 10, 50))}.
  The definition of the \textit{ComplexStream} starts by filtering the event stream $ES$ on the predicate \textit{meterID='AMI100'}. Then, the result is used to compute a fixed windows (\textit{win:within}) of events between time 10 and 50. The output stream, which is a finite stream is then aggregated on the attribute \textit{realPower}. The aggregated value can be retrieved by accessing the \textit{avgP} attribute of the event $e$ in the \textit{ComplexStream} output stream.
  %Complex events are defined by consumers in order to state the situations they are interested in. Those situations can be described in terms of operations that have to be applied to event streams in order to obtain the desired result.   
@@ -336,9 +337,14 @@ For example, if we consider the event type $MeterMeasure:\langle$ \textit{meterI
 %\end{figure}
   %\subsection{Valid event stream composition expression}
   
-  An event stream composition expression must be well formed. More precisely, the input of each stream based operator $Op_i$ implicated in the event stream composition expression must be consistent with the operator definition. For example, the input of an aggregate operators is a stream of finite streams, which can be computed using windows operators as in the \textit{ComplexStream} example. Moreover, the result of a windows operator, which is a stream of finite event streams, cannot be given directly as input to a filter operator as in the expression $filter_P(win:sliding_{(t_w,t_s)}(ES))$. This is due to the fact that the filter operator takes as input an event stream, an not a stream of finite event streams.
-  %To be consistent with the filter operator definition, the this expression     
+  An event stream composition expression must be well formed. More precisely, the input of each stream based operator $Op_i$ implicated in the event stream composition expression must be consistent with the operator definition. For example, the input of an aggregate operator is a stream of finite streams, which can be computed using windows operators as in the \textit{ComplexStream} example. Moreover, the result of a windows operator, which is a stream of finite event streams, cannot be given directly as input to a filter operator as in the expression $FilteredStream=filter_P(win:sliding_{(t_w,t_s)}(ES))$. 
+  This is due to the fact that the filter operator takes as input an event stream, an not a stream of finite event streams. In order to be consistent with the filter operator definition, the \textit{FilteredStream} expression can be written $FilteredStream=filter_P(flatten(win:sliding_{(t_w,t_s)}(ES)))$.    
  \section{Conclusion}
-In this chapter, we presented a model for event streams composition. We focused on the definition of concepts that are manipulated by an event stream composition system. First, we presented the concepts of event, simple and complex event types, and event streams. Then, we presented operators applicable to event streams in order to produce complex events, with their associate selection policies. After that, we presented how stream based operators can be combined together to define the event composition logic associate to a complex event. And finally, we presented some QoS dimensions applicable to an event composition, and how they can be specified using QoS expressions. 
+In this chapter, we presented a model for event streams composition.
+We focused on the definition of concepts that are manipulated by an event stream composition system.
+First, we presented the concepts of event, event types, event occurrence and event streams.
+Then, we presented operators applicable to event streams with their associated semantic. 
+After that, we introduced event stream composition and event stream composition expressions, as mechanisms for combining stream based operators in order to produce complex event streams.
+%And finally, we presented some QoS dimensions applicable to an event composition, and how they can be specified using QoS expressions. 
 
 In the next chapter, we will go one step forward, by presenting how the presented model can be leveraged to define an approach for distributed event streams composition that deals with QoS.

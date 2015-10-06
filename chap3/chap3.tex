@@ -1,7 +1,7 @@
 \chapter{An Event Streams Composition Model}
 \label{ch3}
-\textit{This chapter presents the building blocks to model an event composition system. It defines events, which are the entities manipulated by such a system. Then, it introduces event 
-streams and stream based operations. Then it defines how to represent an event composition, with the related QoS dimensions.}
+\textit{This chapter presents the building blocks to model an event composition system. It defines events, which are the entities manipulated by such a system. Then, it introduces the concepts of event types, event
+streams and stream based operations. finally, it introduces the concept of event stream composition, and how they can be expressed using event stream composition expressions.}
 \vspace{5cm}
 \vspace{2ex}\vfill
 \minitoc
@@ -258,7 +258,7 @@ A size bounded window defines the number of events for each window. We distingui
 
 \subsection{Aggregation operators}
 Applied on a stream of finite streams $Stream(Stream_f(E))= \{ES_{f,1}, ES_{f,2}, ES_{f,3}, ...\}$, an aggregator operator $aggregate_{attr,\ aggrAttr}(Stream(Stream_f(E)))$ computes for each finite stream $ES_{f,i}, i \in \{1, 2, …, n\}$, the aggregated value of the attribute \textit{attr} over events occurrences in $ES_{f,i}$.
-\\The attribute \textit{attr} is the name of an attribute of $E$, that is $\exists \hat{t_j}$ such that $\hat{t_j}$ is an attribute type of $E$ and $name(\hat{t_j})\ =\ attr$.  
+The attribute \textit{attr} is the name of an attribute of $E$, that is $\exists \hat{t_j}$ such that $\hat{t_j}$ is an attribute type of $E$ and $name(\hat{t_j})\ =\ attr$.  
 \\The output is a event stream of type $A\ :\ \langle aggrAttr\ :\ D \rangle$\footnote{We omitted the header attributes} 
 where $D=def(\hat{t_j})$. 
 \\ Aggregate operators include \textit{max, min, count, avg} and \textit{sum}. 
@@ -337,7 +337,7 @@ For example, if we consider the event type $MeterMeasure:\langle$ \textit{meterI
 %\end{figure}
   %\subsection{Valid event stream composition expression}
   
-  An event stream composition expression must be well formed. More precisely, the input of each stream based operator $Op_i$ implicated in the event stream composition expression must be consistent with the operator definition. For example, the input of an aggregate operators is a stream of finite streams, which can be computed using windows operators as in the \textit{ComplexStream} example. Moreover, the result of a windows operator, which is a stream of finite event streams, cannot be given directly as input to a filter operator as in the expression $FilteredStream=filter_P(win:sliding_{(t_w,t_s)}(ES))$. 
+  An event stream composition expression must be well formed. More precisely, the input of each stream based operator $Op_i$ implicated in the event stream composition expression must be consistent with the operator definition. For example, the input of an aggregate operator is a stream of finite streams, which can be computed using windows operators as in the \textit{ComplexStream} example. Moreover, the result of a windows operator, which is a stream of finite event streams, cannot be given directly as input to a filter operator as in the expression $FilteredStream=filter_P(win:sliding_{(t_w,t_s)}(ES))$. 
   This is due to the fact that the filter operator takes as input an event stream, an not a stream of finite event streams. In order to be consistent with the filter operator definition, the \textit{FilteredStream} expression can be written $FilteredStream=filter_P(flatten(win:sliding_{(t_w,t_s)}(ES)))$.    
  \section{Conclusion}
 In this chapter, we presented a model for event streams composition.
